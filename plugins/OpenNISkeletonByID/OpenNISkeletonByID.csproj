@@ -37,7 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="OpenNI.net">
-      <HintPath>..\..\..\..\vvvv_45beta31.2_x86\addonpack\lib\nodes\plugins\OpenNI.net.dll</HintPath>
+      <HintPath>C:\Users\meso-01\Documents\GitHub\vvvv-sdk\vvvv45\addonpack\lib\nodes\plugins\OpenNI.net.dll</HintPath>
     </Reference>
     <Reference Include="SlimDX" />
     <Reference Include="System" />

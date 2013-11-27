@@ -6,11 +6,11 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <OutputType>Library</OutputType>
     <RootNamespace>VVVV.Nodes</RootNamespace>
-    <AssemblyName>DX11.BufferReadbackDynamic</AssemblyName>
+    <AssemblyName>Valuereadbackkkk1</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <ReferencePath>..\..\..\..\..\vvvv_45beta30.2_x86_TANZ3\lib\core\;..\..\..\..\..\vvvv_45beta30.2_x86_TANZ3\lib\nodes\plugins\;..\..\..\..\..\vvvv_45beta31_x86\lib\core\;..\..\..\..\..\vvvv_45beta31_x86\lib\nodes\plugins\</ReferencePath>
+    <ReferencePath>..\..\..\..\vvvv_45beta31.2_x86\lib\core\;..\..\..\..\vvvv_45beta31.2_x86\lib\nodes\plugins\</ReferencePath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DefineConstants>DEBUG;TRACE</DefineConstants>
@@ -37,7 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FeralTic">
-      <HintPath>..\..\..\..\..\vvvv_45beta31_x86\packs\DX11\core\FeralTic.dll</HintPath>
+      <HintPath>..\..\..\..\vvvv_45beta31.2_x86\packs\DX11\core\FeralTic.dll</HintPath>
     </Reference>
     <Reference Include="SlimDX" />
     <Reference Include="System" />
@@ -46,13 +46,10 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="VVVV.Core" />
     <Reference Include="VVVV.DX11.Core">
-      <HintPath>..\..\..\..\..\vvvv_45beta31_x86\packs\DX11\core\VVVV.DX11.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="VVVV.DX11.Factories">
-      <HintPath>..\..\..\..\..\vvvv_45beta31_x86\packs\DX11\factories\VVVV.DX11.Factories.dll</HintPath>
+      <HintPath>..\..\..\..\vvvv_45beta31.2_x86\packs\DX11\core\VVVV.DX11.Core.dll</HintPath>
     </Reference>
     <Reference Include="VVVV.DX11.Lib">
-      <HintPath>..\..\..\..\..\vvvv_45beta31_x86\packs\DX11\core\VVVV.DX11.Lib.dll</HintPath>
+      <HintPath>..\..\..\..\vvvv_45beta31.2_x86\packs\DX11\core\VVVV.DX11.Lib.dll</HintPath>
     </Reference>
     <Reference Include="VVVV.Hosting" />
     <Reference Include="VVVV.PluginInterfaces" />
@@ -60,8 +57,8 @@
     <Reference Include="VVVV.Utils3rdParty" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DX11_BufferReadbackDynamicNode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValuereadbackkkkNode1.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
 </Project>

@@ -12,9 +12,9 @@ StructuredBuffer<float2> uv <string uiname="UV Buffer";>;
 
 SamplerState mySampler : IMMUTABLE
 {
-    Filter = MIN_MAG_MIP_LINEAR;
-    AddressU = Clamp;
-    AddressV = Clamp;
+	Filter = MIN_MAG_MIP_LINEAR;
+	AddressU = Clamp;
+	AddressV = Clamp;
 };
 
 
@@ -22,7 +22,7 @@ SamplerState mySampler : IMMUTABLE
 
 [numthreads(1, 1, 1)]
 void CS( uint3 i : SV_DispatchThreadID)
-{ 
+{
 	if (i.x == 0) { // initialize buffers for each frame at the first pixel only
 		rwbuffer[0] = 10;
 		rwbuffer[1] = -10;
@@ -30,9 +30,14 @@ void CS( uint3 i : SV_DispatchThreadID)
 	
 	float lookup = tex.SampleLevel(mySampler,uv[i.x],0).r;
 	
-	if ( lookup < rwbuffer[0]) rwbuffer[0] = lookup;
+	if( lookup != 0)
+	{
 		
-	if (lookup > rwbuffer[1]) rwbuffer[1] = lookup;	
+		if ( lookup < rwbuffer[0]) rwbuffer[0] = lookup;
+		
+		if (lookup > rwbuffer[1]) rwbuffer[1] = lookup;
+		
+	}
 }
 
 technique11 Process

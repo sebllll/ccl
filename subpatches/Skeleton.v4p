@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta31.2.dtd" >
-   <PATCH nodename="d:\VVVV\MotionBankX\application\v2\subpatches\Skeleton.v4p" systemname="Skeleton" filename="C:\VVVV\MotionBankX\application\v1\subpatches\Skeleton.v4p">
+   <PATCH nodename="D:\vvvv\Application\v2\subpatches\Skeleton.v4p" systemname="Skeleton" filename="C:\VVVV\MotionBankX\application\v1\subpatches\Skeleton.v4p">
    <BOUNDS type="Window" left="9345" top="2700" width="14250" height="10545">
    </BOUNDS>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="1" systemname="IOBox (Value Advanced)">
@@ -363,9 +363,9 @@
    <LINK srcnodeid="0" srcpinname="UserDX9" dstnodeid="35" dstpinname="Input Node">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="36" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="4515" top="2340" width="795" height="240">
+   <BOUNDS type="Box" left="4695" top="2565" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="4515" top="2340" width="0" height="0">
+   <BOUNDS type="Node" left="4695" top="2565" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
