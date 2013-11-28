@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta31.2.dtd" >
    <PATCH nodename="D:\vvvv\Application\v2\_ROOT2.v4p" systemname="_ROOT2" filename="D:\vvvv\Application\v2\_ROOT2.v4p">
-   <BOUNDS type="Window" left="9780" top="2085" width="18390" height="13065">
+   <BOUNDS type="Window" left="2580" top="3825" width="18390" height="13065">
    </BOUNDS>
    <NODE systemname="MainLoop (VVVV)" nodename="MainLoop (VVVV)" componentmode="Hidden" id="-6">
    <BOUNDS type="Node" left="405" top="825" width="100" height="100">
@@ -116,6 +116,8 @@
    <PIN pinname="Shared Handle" visible="1">
    </PIN>
    <PIN pinname="Smoothing" slicecount="1" values="0.5">
+   </PIN>
+   <PIN pinname="MaskedRGBTexture" visible="1">
    </PIN>
    </NODE>
    <NODE systemname="Renderer (TTY)" nodename="Renderer (TTY)" componentmode="InAWindow" id="6">
@@ -482,7 +484,7 @@
    <PIN pinname="BoxSize" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="5" srcpinname="Texture" dstnodeid="147" dstpinname="Texture">
+   <LINK srcnodeid="5" srcpinname="MaskedDepth" dstnodeid="147" dstpinname="Texture">
    </LINK>
    <LINK srcnodeid="95" srcpinname="BoundingBox" dstnodeid="147" dstpinname="BoundingBox">
    </LINK>
@@ -518,6 +520,14 @@
    <BOUNDS type="Box" left="7710" top="12405">
    </BOUNDS>
    <PIN pinname="SpaceIntensity" visible="1">
+   </PIN>
+   <PIN pinname="Smoothness" visible="1">
+   </PIN>
+   <PIN pinname="Energy" visible="1">
+   </PIN>
+   <PIN pinname="Speed" visible="1">
+   </PIN>
+   <PIN pinname="Reach" visible="1">
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="163" systemname="IOBox (Value Advanced)">
@@ -737,7 +747,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="315" top="9255" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" values="1">
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -751,7 +761,7 @@
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="1">
+   <PIN pinname="X Input Value" slicecount="1" values="0">
    </PIN>
    </NODE>
    <LINK srcnodeid="224" srcpinname="Y Output Value" dstnodeid="223" dstpinname="PLAY" linkstyle="Bezier" hiddenwhenlocked="1">
@@ -1303,5 +1313,65 @@
    </LINKPOINT>
    <LINKPOINT x="16635" y="10598">
    </LINKPOINT>
+   </LINK>
+   <NODE systemname="Energy" filename="subpatches\Energy\Energy.v4p" nodename="subpatches\Energy\Energy.v4p" componentmode="Hidden" id="272">
+   <BOUNDS type="Node" left="7665" top="7845" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <BOUNDS type="Window" left="5325" top="4275" width="14400" height="15780">
+   </BOUNDS>
+   <PIN pinname="Smoothness" visible="1">
+   </PIN>
+   <PIN pinname="Energy" visible="1">
+   </PIN>
+   <PIN pinname="Speed" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="273" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="7665" top="8445" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="7665" top="8445" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="272" srcpinname="Speed" dstnodeid="273" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="MaskedRGBTexture" dstnodeid="272" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="272" srcpinname="Smoothness" dstnodeid="161" dstpinname="Smoothness">
+   </LINK>
+   <LINK srcnodeid="272" srcpinname="Energy" dstnodeid="161" dstpinname="Energy">
+   </LINK>
+   <LINK srcnodeid="272" srcpinname="Speed" dstnodeid="161" dstpinname="Speed">
+   </LINK>
+   <NODE systemname="Multiply (Value Spectral)" nodename="Multiply (Value Spectral)" componentmode="Hidden" id="274">
+   <BOUNDS type="Node" left="5250" top="6825" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="147" srcpinname="BoxSize" dstnodeid="274" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Map (Value)" nodename="Map (Value)" componentmode="Hidden" id="276">
+   <BOUNDS type="Node" left="5235" top="7455" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Source Maximum" slicecount="1" values="0.6">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Mapping" slicecount="1" values="Clamp">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="274" srcpinname="Output" dstnodeid="276" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="276" srcpinname="Output" dstnodeid="161" dstpinname="Reach">
    </LINK>
    </PATCH>

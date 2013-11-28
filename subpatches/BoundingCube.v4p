@@ -25,7 +25,7 @@
    <NODE systemname="Differential (Spreads)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Differential (Spreads)" componentmode="Hidden" id="5">
    <BOUNDS type="Node" left="2145" top="2280" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Input" visible="1" slicecount="2" values="10,-10">
+   <PIN pinname="Input" visible="1" slicecount="2" values="0.0352941192686558,0.0392156876623631">
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
@@ -76,22 +76,6 @@
    <PIN pinname="Descriptive Name" slicecount="1" values="Texture">
    </PIN>
    </NODE>
-   <NODE systemname="Calc_Depth" filename="..\DX11\Calc_Depth.v4p" nodename="..\DX11\Calc_Depth.v4p" componentmode="Hidden" id="6">
-   <BOUNDS type="Node" left="2130" top="1785" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Texture" visible="1">
-   </PIN>
-   <PIN pinname="Enabled" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Output 1XYZ" visible="1">
-   </PIN>
-   <BOUNDS type="Window" left="12315" top="2010" width="8580" height="10935">
-   </BOUNDS>
-   </NODE>
-   <LINK srcnodeid="6" srcpinname="Output 1XYZ" dstnodeid="5" dstpinname="Input">
-   </LINK>
-   <LINK srcnodeid="7" srcpinname="Output Node" dstnodeid="6" dstpinname="Texture">
-   </LINK>
    <NODE systemname="Box (DX11.Geometry)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Box (DX11.Geometry)" componentmode="Hidden" id="8">
    <BOUNDS type="Node" left="4275" top="5085" width="100" height="100">
    </BOUNDS>
@@ -249,15 +233,13 @@
    <NODE systemname="Mean (Spectral)" filename="" nodename="Mean (Spectral)" componentmode="Hidden" id="22">
    <BOUNDS type="Node" left="3225" top="2175" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Input" visible="1">
+   <PIN pinname="Input" visible="1" slicecount="2" values="0.0352941192686558,0.0392156876623631">
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
    <PIN pinname="Bin Size" slicecount="1" values="2">
    </PIN>
    </NODE>
-   <LINK srcnodeid="6" srcpinname="Output 1XYZ" dstnodeid="22" dstpinname="Input">
-   </LINK>
    <LINK srcnodeid="22" srcpinname="Output" dstnodeid="20" dstpinname="Z">
    </LINK>
    <NODE systemname="S+H (Animation)" nodename="S+H (Animation)" componentmode="Hidden" id="23">

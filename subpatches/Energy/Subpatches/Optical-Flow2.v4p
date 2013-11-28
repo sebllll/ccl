@@ -1,0 +1,207 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta31.2.dtd" >
+   <PATCH nodename="D:\vvvv\Application\v2\subpatches\Energy\Subpatches\Optical-Flow2.v4p" systemname="Optical-Flow2" filename="C:\Users\sebl\Desktop\Optical-Flow2.v4p">
+   <BOUNDS type="Window" left="4395" top="2505" width="17295" height="11430">
+   </BOUNDS>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="93" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="2115" top="5880" width="810" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2115" top="5880" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="512">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="112" systemname="IOBox (Enumerations)">
+   <BOUNDS type="Box" left="1080" top="4815" width="1590" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1080" top="4815" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Enum" slicecount="1" values="R32G32B32A32_Float">
+   </PIN>
+   <PIN pinname="Output Enum" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="122">
+   <BOUNDS type="Node" left="2565" top="3930" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2565" top="3930" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="0.7">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   </NODE>
+   <NODE systemname="GaussianBlur (OpenCV)" filename="%VVVV%\packs\VVVV.Packs.Image\lib\nodes\plugins\VVVV.Nodes.OpenCV.dll" nodename="GaussianBlur (OpenCV)" componentmode="Hidden" id="85">
+   <BOUNDS type="Node" left="2580" top="3225" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Width" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <NODE systemname="Echo (DX11.Texture Filter)" filename="Echo (DX11)\Echo (DX11.Texture Filter).v4p" nodename="Echo (DX11.Texture Filter)" componentmode="Hidden" id="111">
+   <BOUNDS type="Node" left="1095" top="5355" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Fader" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="111" srcpinname="Width" dstnodeid="93" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="112" srcpinname="Output Enum" dstnodeid="111" dstpinname="Target Format">
+   </LINK>
+   <LINK srcnodeid="122" srcpinname="Y Output Value" dstnodeid="111" dstpinname="Fader">
+   </LINK>
+   <NODE systemname="IOBox (Node)" nodename="IOBox (Node)" componentmode="InABox" id="123">
+   <BOUNDS type="Node" left="2745" top="7380" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2745" top="7380" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Input Node" visible="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="SmoothedTexture">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (Node)" nodename="IOBox (Node)" componentmode="InABox" id="124">
+   <BOUNDS type="Node" left="855" top="7455" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="855" top="7455" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="RawTexture">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="125">
+   <BOUNDS type="Node" left="735" top="945" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="735" top="945" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="0.006">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Lambda">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="126">
+   <BOUNDS type="Node" left="2520" top="855" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2520" top="855" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Iterations">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="2">
+   </PIN>
+   </NODE>
+   <NODE nodename="AsTexture (OpenCV DX11.Texture2D)" componentmode="Hidden" id="130" systemname="AsTexture (OpenCV DX11.Texture2D)" filename="%VVVV%\packs\VVVV.Packs.Image\lib\nodes\plugins\VVVV.Nodes.OpenCV.dll">
+   <BOUNDS type="Node" left="865" top="4205" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="865" top="4205" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="130" srcpinname="Texture Out" dstnodeid="111" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="85" srcpinname="Output" dstnodeid="130" dstpinname="Image">
+   </LINK>
+   <LINK srcnodeid="130" srcpinname="Texture Out" dstnodeid="124" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="111" srcpinname="Output" dstnodeid="123" dstpinname="Input Node">
+   </LINK>
+   <NODE systemname="IOBox (Node)" nodename="IOBox (Node)" componentmode="InABox" id="131">
+   <BOUNDS type="Node" left="4230" top="270" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4230" top="270" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Input">
+   </PIN>
+   </NODE>
+   <NODE systemname="HSCB (DX11.TextureFX)" filename="%VVVV%\packs\dx11-girlpower\nodes\texture11\Filter\HSCB.tfx" nodename="HSCB (DX11.TextureFX)" componentmode="Hidden" id="134">
+   <BOUNDS type="Node" left="5340" top="900" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Texture In" visible="1">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Brightness" slicecount="1" values="4.48">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="131" srcpinname="Output Node" dstnodeid="134" dstpinname="Texture In">
+   </LINK>
+   <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="InAWindow" id="136">
+   <BOUNDS type="Node" left="4620" top="4365" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4620" top="4365" width="6000" height="4500">
+   </BOUNDS>
+   <BOUNDS type="Window" left="21960" top="6960" width="6120" height="4860">
+   </BOUNDS>
+   <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="OpticalFlow">
+   </PIN>
+   </NODE>
+   <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="InAWindow" id="140">
+   <BOUNDS type="Node" left="6570" top="2460" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="6570" top="2460" width="6000" height="4500">
+   </BOUNDS>
+   <BOUNDS type="Window" left="21975" top="1515" width="6120" height="4860">
+   </BOUNDS>
+   <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|RGB MASK|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="131" srcpinname="Output Node" dstnodeid="140" dstpinname="Texture In">
+   </LINK>
+   <NODE systemname="AsImage (OpenCV DX11.Texture2D)" filename="..\..\..\..\..\vvvv-sdk\vvvv45\VVVV.Packs.Image\lib\nodes\plugins\VVVV.Nodes.OpenCV.dll" nodename="AsImage (OpenCV DX11.Texture2D)" componentmode="Hidden" id="149">
+   <BOUNDS type="Node" left="4320" top="1650" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="131" srcpinname="Output Node" dstnodeid="149" dstpinname="Input">
+   </LINK>
+   <NODE systemname="OpticalFlowHS (OpenCV)" filename="%VVVV%\packs\VVVV.Packs.Image\lib\nodes\plugins\VVVV.Nodes.OpenCV.dll" nodename="OpticalFlowHS (OpenCV)" componentmode="Hidden" id="150">
+   <BOUNDS type="Node" left="2580" top="2655" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="150" srcpinname="Output" dstnodeid="85" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="125" srcpinname="Y Output Value" dstnodeid="150" dstpinname="Lambda">
+   </LINK>
+   <LINK srcnodeid="126" srcpinname="Y Output Value" dstnodeid="150" dstpinname="Maximum Iterations">
+   </LINK>
+   <LINK srcnodeid="149" srcpinname="Output" dstnodeid="150" dstpinname="Input">
+   </LINK>
+   <NODE systemname="AsTexture (OpenCV DX11.Texture2D)" filename="..\..\..\..\..\vvvv-sdk\vvvv45\VVVV.Packs.Image\lib\nodes\plugins\VVVV.Nodes.OpenCV.dll" nodename="AsTexture (OpenCV DX11.Texture2D)" componentmode="Hidden" id="154">
+   <BOUNDS type="Node" left="4605" top="3120" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="154" srcpinname="Texture Out" dstnodeid="136" dstpinname="Texture In">
+   </LINK>
+   <LINK srcnodeid="85" srcpinname="Output" dstnodeid="154" dstpinname="Image">
+   <LINKPOINT x="4710" y="3120">
+   </LINKPOINT>
+   </LINK>
+   </PATCH>
