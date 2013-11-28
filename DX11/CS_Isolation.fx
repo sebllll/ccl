@@ -11,9 +11,6 @@ Texture2D texPlayer <string uiname="Player Texture";>;
 //Buffer containing uvs for sampling
 StructuredBuffer<float2> uv <string uiname="UV Buffer";>;
 
-int Binsize = 128;
-
-int Divisor = 100;
 
 SamplerState mySampler : IMMUTABLE
 {
@@ -28,29 +25,22 @@ void CS( uint3 i : SV_DispatchThreadID)
 {
 	if (i.x == 0)
 	{
-		for ( int b = 0; b < (Binsize*2); b++)
-		{
-			rwbuffer[b] = 0.0f;
-		}
+		rwbuffer[0] = 0.0f;
+		rwbuffer[1] = 0.0f;
+		//rwbuffer[2] = 0.0f;
 	}
-	
-	float2 lookup = tex.SampleLevel(mySampler,uv[i.x],0).rg;
 	
 	float playerLookup = texPlayer.SampleLevel(mySampler,uv[i.x],0).b;
 	
 	if (playerLookup > 0.06)
 	{
+		rwbuffer[0] += 1.0f;
 		
-		uint slotR = abs(lookup.r * Binsize );
-		uint slotG = abs((lookup.g * Binsize) + Binsize-1 );
-		
-		rwbuffer[slotR] += lookup.r / Divisor;
-		rwbuffer[slotG] += lookup.g / Divisor;
-
-//		rwbuffer[slotR] += sign(lookup.r) * 1 / Divisor;
-//		rwbuffer[slotG] += sign(lookup.g) * 1 / Divisor;
-		
+		float2 lookup = tex.SampleLevel(mySampler,uv[i.x],0).rg;
+		rwbuffer[1] += abs(lookup.r / 2) + abs(lookup.g / 2);
 	}
+	
+	//rwbuffer[2] += 1.0f;
 }
 
 technique11 Process
