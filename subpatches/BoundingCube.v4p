@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta31.2.dtd" >
    <PATCH nodename="D:\vvvv\Application\v2\subpatches\BoundingCube.v4p" systemname="BoundingCube" filename="D:\vvvv\Application\v2\subpatches\BoundingCube.v4p">
-   <BOUNDS type="Window" left="9975" top="5415" width="9000" height="8025">
+   <BOUNDS type="Window" left="11775" top="525" width="17025" height="14610">
    </BOUNDS>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="0" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="6105" top="150" width="795" height="960">
@@ -306,34 +306,6 @@
    </NODE>
    <LINK srcnodeid="35" srcpinname="Output String" dstnodeid="34" dstpinname="Send String">
    </LINK>
-   <LINK srcnodeid="17" srcpinname="View" dstnodeid="16" dstpinname="View">
-   </LINK>
-   <NODE id="17" systemname="Camera (Transform Softimage)" filename="%VVVV%\lib\nodes\modules\Transform\Camera (Transform Softimage).v4p" nodename="Camera (Transform Softimage)" componentmode="Hidden">
-   <PIN pinname="View" visible="1">
-   </PIN>
-   <PIN pinname="Projection" visible="1">
-   </PIN>
-   <BOUNDS type="Node" left="5325" top="7605" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Inital Distance" slicecount="1" values="3">
-   </PIN>
-   </NODE>
-   <NODE id="16" componentmode="InAWindow" systemname="Renderer (DX11)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)">
-   <PIN pinname="View" visible="1">
-   </PIN>
-   <PIN pinname="Projection" visible="1">
-   </PIN>
-   <BOUNDS type="Window" left="0" top="0" width="6120" height="4860">
-   </BOUNDS>
-   <BOUNDS type="Node" left="3375" top="7995" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Box" left="3375" top="7995" width="6000" height="4500">
-   </BOUNDS>
-   <PIN pinname="Layers" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="17" srcpinname="Projection" dstnodeid="16" dstpinname="Projection">
-   </LINK>
    <NODE id="14" systemname="Constant (DX11.Effect)" filename="%VVVV%\packs\dx11-girlpower\nodes\dx11\Constant.fx" nodename="Constant (DX11.Effect)" componentmode="Hidden">
    <PIN pinname="Layer" visible="1">
    </PIN>
@@ -349,8 +321,6 @@
    <LINK srcnodeid="14" srcpinname="Layer" dstnodeid="34" dstpinname="Input Value">
    </LINK>
    <LINK srcnodeid="19" srcpinname="Transform Out" dstnodeid="14" dstpinname="Transform In">
-   </LINK>
-   <LINK srcnodeid="14" srcpinname="Layer" dstnodeid="16" dstpinname="Layers">
    </LINK>
    <LINK srcnodeid="15" srcpinname="Render State" dstnodeid="14" dstpinname="Render State">
    </LINK>

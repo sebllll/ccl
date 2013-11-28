@@ -577,7 +577,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="2280" top="16275" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" values="0.25">
+   <PIN pinname="Y Input Value" slicecount="1" values="0.5">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="s">
    </PIN>
@@ -795,7 +795,7 @@
    <LINK srcnodeid="270" srcpinname="Output Node" dstnodeid="255" dstpinname="Player Texture">
    </LINK>
    <NODE systemname="Echo (DX11.Texture Filter)" filename="..\DX11\Echo (DX11.Texture Filter).v4p" nodename="Echo (DX11.Texture Filter)" componentmode="Hidden" id="215">
-   <BOUNDS type="Node" left="4605" top="5250" width="100" height="100">
+   <BOUNDS type="Node" left="5355" top="5235" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Output" visible="1">
    </PIN>
@@ -812,8 +812,6 @@
    </LINK>
    <LINK srcnodeid="211" srcpinname="Output Node" dstnodeid="215" dstpinname="Input">
    </LINK>
-   <LINK srcnodeid="215" srcpinname="Output" dstnodeid="270" dstpinname="Input Node">
-   </LINK>
    <NODE systemname="Echo (DX11.Texture Filter)" filename="..\DX11\Echo (DX11.Texture Filter).v4p" nodename="Echo (DX11.Texture Filter)" componentmode="Hidden" id="268">
    <BOUNDS type="Node" left="1095" top="5355" width="100" height="100">
    </BOUNDS>
@@ -829,8 +827,6 @@
    <LINK srcnodeid="112" srcpinname="Output Enum" dstnodeid="268" dstpinname="Target Format">
    </LINK>
    <LINK srcnodeid="122" srcpinname="Y Output Value" dstnodeid="268" dstpinname="Fader">
-   </LINK>
-   <LINK srcnodeid="268" srcpinname="Output" dstnodeid="143" dstpinname="Input Node">
    </LINK>
    <NODE systemname="R (Node)" nodename="R (Node)" componentmode="Hidden" id="278">
    <BOUNDS type="Node" left="1245" top="2625" width="100" height="100">
@@ -1303,5 +1299,31 @@
    <LINK srcnodeid="364" srcpinname="Output String" dstnodeid="366" dstpinname="Send String">
    </LINK>
    <LINK srcnodeid="181" srcpinname="Position Out" dstnodeid="366" dstpinname="Input Value">
+   </LINK>
+   <LINK srcnodeid="211" srcpinname="Output Node" dstnodeid="270" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="268" srcpinname="Output" dstnodeid="143" dstpinname="Input Node">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="372" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="6345" top="4260" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6345" top="4260" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Enabled">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="372" srcpinname="Y Output Value" dstnodeid="215" dstpinname="Enabled">
    </LINK>
    </PATCH>
