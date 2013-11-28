@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta31.2.dtd" >
    <PATCH nodename="D:\vvvv\Application\v2\subpatches\SpaceIntensity.v4p" systemname="SpaceIntensity" filename="D:\vvvv\Application\v2\subpatches\SpaceIntensity.v4p">
-   <BOUNDS type="Window" left="13830" top="3570" width="10035" height="7350">
+   <BOUNDS type="Window" left="33690" top="1590" width="10035" height="4110">
    </BOUNDS>
    <NODE systemname="Queue (Spreads)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Queue (Spreads)" componentmode="Hidden" id="0">
    <BOUNDS type="Node" left="1500" top="1500" width="2850" height="270">
@@ -117,7 +117,7 @@
    </PIN>
    <PIN pinname="Show Grid" slicecount="1" values="0">
    </PIN>
-   <PIN pinname="Maximum" slicecount="1" values="0.5">
+   <PIN pinname="Maximum" slicecount="1" values="1">
    </PIN>
    <PIN pinname="Minimum" slicecount="1" values="0">
    </PIN>

@@ -624,7 +624,7 @@
    </LINK>
    <LINK srcnodeid="49" srcpinname="Render State Out" dstnodeid="16" dstpinname="Render State">
    </LINK>
-   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InAWindow" id="77">
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="FullScreen" id="77">
    <BOUNDS type="Node" left="5040" top="6645" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="5040" top="6645" width="2400" height="1800">
