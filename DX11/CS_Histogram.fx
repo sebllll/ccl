@@ -42,7 +42,7 @@ void CS( uint3 i : SV_DispatchThreadID)
 	{
 		
 		uint slotR = abs(lookup.r * Binsize );
-		uint slotG = abs((lookup.g * Binsize) + Binsize-1 );
+		uint slotG = abs(lookup.g * Binsize)  + Binsize-1;
 		
 		rwbuffer[slotR] += lookup.r / Divisor;
 		rwbuffer[slotG] += lookup.g / Divisor;

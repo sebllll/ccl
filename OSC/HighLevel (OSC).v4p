@@ -543,7 +543,7 @@
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="28" systemname="IOBox (String)">
-   <BOUNDS type="Box" left="585" top="4020" width="795" height="240">
+   <BOUNDS type="Box" left="585" top="4020" width="1200" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="585" top="4020" width="0" height="0">
    </BOUNDS>

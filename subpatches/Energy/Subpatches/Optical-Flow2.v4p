@@ -84,32 +84,6 @@
    <PIN pinname="Descriptive Name" slicecount="1" values="Input">
    </PIN>
    </NODE>
-   <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="InAWindow" id="136">
-   <BOUNDS type="Node" left="4620" top="4365" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Box" left="4620" top="4365" width="6000" height="4500">
-   </BOUNDS>
-   <BOUNDS type="Window" left="21960" top="6960" width="6120" height="4860">
-   </BOUNDS>
-   <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="OpticalFlow">
-   </PIN>
-   </NODE>
-   <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="InAWindow" id="140">
-   <BOUNDS type="Node" left="6525" top="2280" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Box" left="6525" top="2280" width="6000" height="4500">
-   </BOUNDS>
-   <BOUNDS type="Window" left="21975" top="1515" width="6120" height="4860">
-   </BOUNDS>
-   <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="|RGB MASK|">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="131" srcpinname="Output Node" dstnodeid="140" dstpinname="Texture In">
-   </LINK>
    <NODE systemname="AsImage (OpenCV DX11.Texture2D)" filename="..\..\..\..\..\vvvv-sdk\vvvv45\VVVV.Packs.Image\lib\nodes\plugins\VVVV.Nodes.OpenCV.dll" nodename="AsImage (OpenCV DX11.Texture2D)" componentmode="Hidden" id="149">
    <BOUNDS type="Node" left="4320" top="1650" width="100" height="100">
    </BOUNDS>
@@ -191,15 +165,15 @@
    <LINK srcnodeid="130" srcpinname="Texture Out" dstnodeid="111" dstpinname="Input">
    </LINK>
    <NODE systemname="S (Node)" nodename="S (Node)" componentmode="Hidden" id="156">
-   <BOUNDS type="Node" left="6720" top="4905" width="100" height="100">
+   <BOUNDS type="Node" left="6075" top="6225" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input Value" visible="1">
    </PIN>
    </NODE>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="157" systemname="IOBox (String)">
-   <BOUNDS type="Box" left="6975" top="4215" width="795" height="240">
+   <BOUNDS type="Box" left="6330" top="5535" width="1560" height="390">
    </BOUNDS>
-   <BOUNDS type="Node" left="6975" top="4215" width="0" height="0">
+   <BOUNDS type="Node" left="6330" top="5535" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Input String" slicecount="1" values="opticalFlowTex">
    </PIN>
@@ -211,8 +185,6 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="157" srcpinname="Output String" dstnodeid="156" dstpinname="Send String">
-   </LINK>
-   <LINK srcnodeid="130" srcpinname="Texture Out" dstnodeid="136" dstpinname="Texture In">
    </LINK>
    <NODE systemname="OpticalFlowHS (OpenCV)" filename="%VVVV%\packs\VVVV.Packs.Image\lib\nodes\plugins\VVVV.Nodes.OpenCV.dll" nodename="OpticalFlowHS (OpenCV)" componentmode="Hidden" id="158">
    <BOUNDS type="Node" left="4485" top="2880" width="100" height="100">
@@ -250,6 +222,30 @@
    </NODE>
    <LINK srcnodeid="159" srcpinname="Output" dstnodeid="160" dstpinname="Image">
    </LINK>
-   <LINK srcnodeid="160" srcpinname="Texture Out" dstnodeid="156" dstpinname="Input Value">
+   <LINK srcnodeid="130" srcpinname="Texture Out" dstnodeid="156" dstpinname="Input Value">
+   </LINK>
+   <NODE systemname="S (Node)" nodename="S (Node)" componentmode="Hidden" id="163">
+   <BOUNDS type="Node" left="8505" top="6150" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Value" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="162" systemname="IOBox (String)">
+   <BOUNDS type="Box" left="8760" top="5460" width="1560" height="390">
+   </BOUNDS>
+   <BOUNDS type="Node" left="8760" top="5460" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" values="opticalFlowTex2">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="devnul">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="162" srcpinname="Output String" dstnodeid="163" dstpinname="Send String">
+   </LINK>
+   <LINK srcnodeid="160" srcpinname="Texture Out" dstnodeid="163" dstpinname="Input Value">
    </LINK>
    </PATCH>
