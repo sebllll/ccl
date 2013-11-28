@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta31.2.dtd" >
-   <PATCH nodename="C:\dev\vvvv\ccl\HighLevel (OSC).v4p" systemname="HighLevel (OSC)" filename="C:\dev\vvvv\ccl\HighLevel (OSC).v4p">
+   <PATCH nodename="D:\vvvv\Application\v2\OSC\HighLevel (OSC).v4p" systemname="HighLevel (OSC)" filename="C:\dev\vvvv\ccl\HighLevel (OSC).v4p">
    <BOUNDS type="Window" left="2085" top="3255" width="9000" height="11430">
    </BOUNDS>
    <NODE systemname="OSCEncoder (Network)" filename="" nodename="OSCEncoder (Network)" componentmode="InAWindow" id="0">
@@ -124,8 +124,6 @@
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="8" srcpinname="Output" dstnodeid="9" dstpinname="Input">
-   </LINK>
    <LINK srcnodeid="9" srcpinname="Output" dstnodeid="0" dstpinname="Arguments">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="10" systemname="IOBox (Value Advanced)">
@@ -499,7 +497,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="5520" top="3705" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" values="0">
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -509,9 +507,31 @@
    </PIN>
    <PIN pinname="Behavior" slicecount="1" values="Toggle">
    </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="0">
+   <PIN pinname="X Input Value" slicecount="1" values="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="24" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Spread as Bundle">
+   </LINK>
+   <NODE systemname="LFO (Animation)" nodename="LFO (Animation)" componentmode="Hidden" id="25">
+   <BOUNDS type="Node" left="10140" top="4860" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Period" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Phase" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="RandomSpread (Spreads)" nodename="RandomSpread (Spreads)" componentmode="Hidden" id="26">
+   <BOUNDS type="Node" left="10125" top="4215" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Spread Count" slicecount="1" values="10">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="26" srcpinname="Output" dstnodeid="25" dstpinname="Phase">
+   </LINK>
+   <LINK srcnodeid="25" srcpinname="Output" dstnodeid="9" dstpinname="Input">
    </LINK>
    </PATCH>

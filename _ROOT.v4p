@@ -1,13 +1,13 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta31.2.dtd" >
    <PATCH nodename="D:\vvvv\Application\v2\_ROOT.v4p" systemname="_ROOT" filename="C:\VVVV\MotionBankX\docs\application\v1\_ROOT.v4p">
-   <BOUNDS type="Window" left="6420" top="255" width="18390" height="11640">
+   <BOUNDS type="Window" left="7875" top="1890" width="18390" height="13065">
    </BOUNDS>
    <NODE systemname="MainLoop (VVVV)" nodename="MainLoop (VVVV)" componentmode="Hidden" id="-6">
    <BOUNDS type="Node" left="405" top="825" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Maximum background fpsS" visible="1" slicecount="1" values="60">
    </PIN>
-   <PIN pinname="Time Mode" slicecount="1" values="Raw">
+   <PIN pinname="Time Mode" slicecount="1" values="Filtered">
    </PIN>
    <PIN pinname="Present UpFront" slicecount="1" values="1">
    </PIN>
@@ -85,7 +85,7 @@
    <LINK srcnodeid="1" srcpinname="frames per second" dstnodeid="2" dstpinname="Y Input Value">
    </LINK>
    <NODE systemname="Skeleton" filename="subpatches\Skeleton.v4p" nodename="subpatches\Skeleton.v4p" componentmode="Hidden" id="5">
-   <BOUNDS type="Node" left="1020" top="4245" width="13635" height="270">
+   <BOUNDS type="Node" left="1080" top="4335" width="13635" height="270">
    </BOUNDS>
    <BOUNDS type="Window" left="9345" top="2700" width="14250" height="10545">
    </BOUNDS>
@@ -123,7 +123,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="2235" top="1545" width="2400" height="1800">
    </BOUNDS>
-   <BOUNDS type="Window" left="0" top="5385" width="11550" height="7815">
+   <BOUNDS type="Window" left="-525" top="9675" width="11550" height="7815">
    </BOUNDS>
    <PIN pinname="Layers" visible="1">
    </PIN>
@@ -167,7 +167,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="4290" top="8625" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Input String" slicecount="1" values="..\..\DATA">
+   <PIN pinname="Input String" slicecount="1" values="DATA">
    </PIN>
    <PIN pinname="Default" slicecount="1" values="file.avi">
    </PIN>
@@ -187,7 +187,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="8190" top="8595" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Input String" slicecount="1" values="test3">
+   <PIN pinname="Input String" slicecount="1" values="test4">
    </PIN>
    <PIN pinname="Default" slicecount="1" values="text">
    </PIN>
@@ -335,9 +335,9 @@
    <LINK srcnodeid="99" srcpinname="Output" dstnodeid="98" dstpinname="CenterOfMass">
    </LINK>
    <LINK srcnodeid="5" srcpinname="CenterOfMassXYZ" dstnodeid="99" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="13900" y="6205">
+   <LINKPOINT x="13940" y="6265">
    </LINKPOINT>
-   <LINKPOINT x="4670" y="4490">
+   <LINKPOINT x="4690" y="4520">
    </LINKPOINT>
    </LINK>
    <NODE systemname="RandomSpread (Spreads)" nodename="RandomSpread (Spreads)" componentmode="Hidden" id="101">
@@ -361,7 +361,7 @@
    <LINK srcnodeid="102" srcpinname="Cycles" dstnodeid="101" dstpinname="Random Seed">
    </LINK>
    <NODE systemname="Damper (Animation)" nodename="Damper (Animation)" componentmode="Hidden" id="103">
-   <BOUNDS type="Node" left="8610" top="7230" width="100" height="100">
+   <BOUNDS type="Node" left="8715" top="7290" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Go To Position" visible="1">
    </PIN>
@@ -377,11 +377,11 @@
    <LINK srcnodeid="5" srcpinname="UserTex" dstnodeid="95" dstpinname="Texture">
    </LINK>
    <NODE systemname="Writer (Raw)" nodename="Writer (Raw)" componentmode="Hidden" id="106">
-   <BOUNDS type="Node" left="7110" top="10650" width="100" height="100">
+   <BOUNDS type="Node" left="7125" top="11910" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Append" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Content" visible="1">
+   <PIN pinname="Content" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Filename" visible="1">
    </PIN>
@@ -402,12 +402,10 @@
    <PIN pinname="FileName" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="98" srcpinname="OSCMessage" dstnodeid="106" dstpinname="Content">
-   </LINK>
    <LINK srcnodeid="16" srcpinname="Output" dstnodeid="106" dstpinname="Filename" linkstyle="Bezier">
-   <LINKPOINT x="8445" y="10470">
+   <LINKPOINT x="8450" y="10890">
    </LINKPOINT>
-   <LINKPOINT x="7350" y="10470">
+   <LINKPOINT x="7360" y="11310">
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="107" systemname="IOBox (Value Advanced)">
@@ -433,9 +431,9 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="107" srcpinname="Y Output Value" dstnodeid="106" dstpinname="Write" linkstyle="Bezier">
-   <LINKPOINT x="3960" y="8963">
+   <LINKPOINT x="3965" y="9383">
    </LINKPOINT>
-   <LINKPOINT x="7455" y="8963">
+   <LINKPOINT x="7465" y="9803">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="107" srcpinname="Y Output Value" dstnodeid="104" dstpinname="Write">
@@ -485,6 +483,8 @@
    </PIN>
    <PIN pinname="X Input Value" slicecount="1" values="0">
    </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="133" srcpinname="Y Output Value" dstnodeid="5" dstpinname="Reset">
    </LINK>
@@ -524,14 +524,20 @@
    </NODE>
    <LINK srcnodeid="5" srcpinname="Shared Handle" dstnodeid="136" dstpinname="Y Input Value">
    </LINK>
-   <NODE systemname="LowLevel (OSC)" filename="OSC\LowLevel (OSC).v4p" nodename="LowLevel (OSC)" componentmode="Hidden" id="137">
-   <BOUNDS type="Node" left="10155" top="8085" width="100" height="100">
+   <NODE systemname="LowLevel (OSC)" filename="OSC\LowLevel (OSC).v4p" nodename="LowLevel (OSC)" componentmode="InAWindow" id="137">
+   <BOUNDS type="Node" left="11625" top="7080" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Center" visible="1">
    </PIN>
+   <BOUNDS type="Window" left="8385" top="5475" width="9000" height="9225">
+   </BOUNDS>
+   <PIN pinname="BoxSize" visible="1">
+   </PIN>
+   <PIN pinname="FrameNumber" visible="1">
+   </PIN>
+   <PIN pinname="OSCMessage" visible="1">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="5" srcpinname="PositionXYZ" dstnodeid="137" dstpinname="Center">
-   </LINK>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="138" systemname="IOBox (String)">
    <BOUNDS type="Node" left="0" top="0" width="5490" height="270">
    </BOUNDS>
@@ -557,9 +563,703 @@
    </PIN>
    <PIN pinname="BoundingBox" visible="1">
    </PIN>
+   <PIN pinname="BoxSize" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="5" srcpinname="Texture" dstnodeid="147" dstpinname="Texture">
    </LINK>
    <LINK srcnodeid="95" srcpinname="BoundingBox" dstnodeid="147" dstpinname="BoundingBox">
+   </LINK>
+   <NODE systemname="Skeleton (OSC)" filename="OSC\Skeleton (OSC).v4p" nodename="OSC\Skeleton (OSC).v4p" componentmode="Hidden" id="157">
+   <BOUNDS type="Node" left="13705" top="7081" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="11263" top="3991" width="4885" height="6180">
+   </BOUNDS>
+   <BOUNDS type="Window" left="11565" top="4785" width="4890" height="6180">
+   </BOUNDS>
+   <PIN pinname="OSCMessage" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="5" srcpinname="PositionXYZ" dstnodeid="157" dstpinname="PositionXYZ">
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="JointName" dstnodeid="157" dstpinname="JointName">
+   </LINK>
+   <LINK srcnodeid="147" srcpinname="BoxSize" dstnodeid="137" dstpinname="BoxSize">
+   </LINK>
+   <NODE systemname="FrameCounter (Animation)" nodename="FrameCounter (Animation)" componentmode="Hidden" id="159">
+   <BOUNDS type="Node" left="12480" top="6465" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Reset" visible="1">
+   </PIN>
+   <PIN pinname="Frame Count" visible="1">
+   </PIN>
+   <PIN pinname="Enable" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="133" srcpinname="Y Output Value" dstnodeid="159" dstpinname="Reset">
+   </LINK>
+   <LINK srcnodeid="159" srcpinname="Frame Count" dstnodeid="137" dstpinname="FrameNumber">
+   </LINK>
+   <NODE systemname="HighLevel (OSC)" filename="OSC\HighLevel (OSC).v4p" nodename="HighLevel (OSC)" componentmode="Hidden" id="161">
+   <BOUNDS type="Node" left="9765" top="7380" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="OSCMessage" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="UDP (Network Client)" nodename="UDP (Network Client)" componentmode="Hidden" id="162">
+   <BOUNDS type="Node" left="11625" top="9720" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="137" srcpinname="OSCMessage" dstnodeid="162" dstpinname="Input">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="163" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="11895" top="8040" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="11895" top="8040" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="LowLevel">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="163" srcpinname="Y Output Value" dstnodeid="162" dstpinname="Do Send" linkstyle="PolyLine">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="164" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="12450" top="8970" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="12450" top="8970" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="5001">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="164" srcpinname="Y Output Value" dstnodeid="162" dstpinname="Remote Port">
+   </LINK>
+   <NODE systemname="UDP (Network Client)" nodename="UDP (Network Client)" componentmode="Hidden" id="166">
+   <BOUNDS type="Node" left="13650" top="9375" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Remote Host" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="165" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="14445" top="8730" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="14445" top="8730" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="5002">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="165" srcpinname="Y Output Value" dstnodeid="166" dstpinname="Remote Port">
+   </LINK>
+   <LINK srcnodeid="157" srcpinname="OSCMessage" dstnodeid="166" dstpinname="Input">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="167" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="13830" top="8130" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="13830" top="8130" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Skeleton">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="167" srcpinname="Y Output Value" dstnodeid="166" dstpinname="Do Send">
+   </LINK>
+   <NODE systemname="UDP (Network Client)" nodename="UDP (Network Client)" componentmode="Hidden" id="170">
+   <BOUNDS type="Node" left="10050" top="9600" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Remote Host" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="169" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="10320" top="7920" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="10320" top="7920" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="HighLevel">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="169" srcpinname="Y Output Value" dstnodeid="170" dstpinname="Do Send" linkstyle="PolyLine">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="168" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="10875" top="8850" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="10875" top="8850" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="5003">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="168" srcpinname="Y Output Value" dstnodeid="170" dstpinname="Remote Port">
+   </LINK>
+   <LINK srcnodeid="161" srcpinname="OSCMessage" dstnodeid="170" dstpinname="Input">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="171" systemname="IOBox (String)">
+   <BOUNDS type="Box" left="14595" top="7860" width="1995" height="435">
+   </BOUNDS>
+   <BOUNDS type="Node" left="14595" top="7860" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" values="192.168.178.255">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="192.168.1.1">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="IP">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="171" srcpinname="Output String" dstnodeid="162" dstpinname="Remote Host">
+   </LINK>
+   <LINK srcnodeid="171" srcpinname="Output String" dstnodeid="166" dstpinname="Remote Host">
+   </LINK>
+   <LINK srcnodeid="171" srcpinname="Output String" dstnodeid="170" dstpinname="Remote Host">
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="CenterOfMassXYZ" dstnodeid="137" dstpinname="Center">
+   </LINK>
+   <NODE systemname="Encode (String Base64)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Encode (String Base64)" componentmode="Hidden" id="172">
+   <BOUNDS type="Node" left="4950" top="10755" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Data" visible="1">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="AsRaw (String)" filename="" nodename="AsRaw (String)" componentmode="Hidden" id="174">
+   <BOUNDS type="Node" left="4890" top="11490" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1" slicecount="1" values="|I2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAL35prW9TZ6EP3zMzQAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADwR0U4AAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/4ZmaP/EP+T9BaHMAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAd2DgAAABQvT1NDL1RpbWVzdGFtcAAALAAAAA==&cr;&lf;|">
+   </PIN>
+   </NODE>
+   <NODE systemname="Separate (String)" nodename="Separate (String)" componentmode="Hidden" id="176">
+   <BOUNDS type="Node" left="8595" top="12855" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="|I2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAL4ULD28px3nP4AGjgAAABgv&cr;&lf;T1NDL1ZlbG9jaXR5AAAALGYAADypkwwAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAA&cr;&lf;AAA/vzGQP9MzMz8FGCsAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfK3gAAABQvT1NDL1Rp&cr;&lf;bWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAL4S&cr;&lf;8aq8raufP364UgAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADuw8nwAAAAsL09TQy9Cb3VuZGluZ0Jv&cr;&lf;eFNpemUAAAAALGZmZgAAAAA/vzGQP9MzMz8E3S8AAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAA&cr;&lf;AAfK3wAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0Nl&cr;&lf;bnRlcgAsZmZmAAAAAL4KPXG8qZMMP33S8gAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADwWu5kAAAAs&cr;&lf;L09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/uzMzP9MzMz8EqMEAAAAcL09TQy9GcmFt&cr;&lf;ZU51bWJlcgAAAAAsaQAAAAfK4AAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAA&cr;&lf;AAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAL4KwIO8KmTDP3++dwAAABgvT1NDL1ZlbG9jaXR5&cr;&lf;AAAALGYAADxQE6kAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/wAAAP9MzMz8E&cr;&lf;gW8AAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfK4QAAABQvT1NDL1RpbWVzdGFtcAAALAAA&cr;&lf;AAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAL4KwIO8KmTDP3++dwAA&cr;&lf;ABgvT1NDL1ZlbG9jaXR5AAAALGYAAAAAAAAAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZm&cr;&lf;ZgAAAAA/uzMzP9MzMz8EWh0AAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfK4gAAABQvT1ND&cr;&lf;L1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAA&cr;&lf;AL4HrhS8TMzNP4CTdQAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADvYRNAAAAAsL09TQy9Cb3VuZGlu&cr;&lf;Z0JveFNpemUAAAAALGZmZgAAAAA/uzMzP9MzMz8EOVgAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAs&cr;&lf;aQAAAAfK4wAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1ND&cr;&lf;L0NlbnRlcgAsZmZmAAAAAL4Mfii8G6XjP4CM5wAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADu3gDQA&cr;&lf;AAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/uzMzP9MzMz8Fc+sAAAAcL09TQy9G&cr;&lf;cmFtZU51bWJlcgAAAAAsaQAAAAfK5AAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAA&cr;&lf;AAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAL4O8028L08OP4AAAAAAABgvT1NDL1ZlbG9j&cr;&lf;aXR5AAAALGYAADuj1woAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/wM5wP9Mz&cr;&lf;Mz8HWOIAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfK5QAAABQvT1NDL1RpbWVzdGFtcAAA&cr;&lf;LAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAL4O8028L08OP4AA&cr;&lf;AAAAABgvT1NDL1ZlbG9jaXR5AAAALGYAAAAAAAAAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAA&cr;&lf;LGZmZgAAAAA/vZf2P9MzMz8IbCIAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfK5gAAABQv&cr;&lf;T1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZm&cr;&lf;AAAAAL4PkJe7gxJvP35WBAAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADwaAnUAAAAsL09TQy9Cb3Vu&cr;&lf;ZGluZ0JveFNpemUAAAAALGZmZgAAAAA/vzGQP9MzMz8I9cMAAAAcL09TQy9GcmFtZU51bWJlcgAA&cr;&lf;AAAsaQAAAAfK5wAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAv&cr;&lf;T1NDL0NlbnRlcgAsZmZmAAAAAL4PkJe7gxJvP35WBAAAABgvT1NDL1ZlbG9jaXR5AAAALGYAAAAA&cr;&lf;AAAAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/vzGQP9MzMz8JD/kAAAAcL09T&cr;&lf;Qy9GcmFtZU51bWJlcgAAAAAsaQAAAAfK6AAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRs&cr;&lf;ZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAL4QLeA8MpXqP34hlgAAABgvT1NDL1Zl&cr;&lf;bG9jaXR5AAAALGYAADx1wo8AAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/uzMz&cr;&lf;P9MzMz8I7zUAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfK6QAAABQvT1NDL1RpbWVzdGFt&cr;&lf;cAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAL4LDyg8Lauf&cr;&lf;P3vg3wAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADwnHecAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUA&cr;&lf;AAAALGZmZgAAAAA/uzMzP9MzMz8IoJAAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfK6gAA&cr;&lf;ABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAs&cr;&lf;ZmZmAAAAAL4KCQO7AxJvP3jH4wAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADyPXCkAAAAsL09TQy9C&cr;&lf;b3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/vZf2P9MzMz8IN7UAAAAcL09TQy9GcmFtZU51bWJl&cr;&lf;cgAAAAAsaQAAAAfK6wAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAA&cr;&lf;ACAvT1NDL0NlbnRlcgAsZmZmAAAAAL4KCQO7AxJvP3jH4wAAABgvT1NDL1ZlbG9jaXR5AAAALGYA&cr;&lf;AAAAAAAAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/uzMzP9MzMz8HyEsAAAAc&cr;&lf;L09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfK7AAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1&cr;&lf;bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAL4NG3G76KceP3g+QgAAABgvT1ND&cr;&lf;L1ZlbG9jaXR5AAAALGYAADvLKV8AAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/&cr;&lf;vzGQP9MzMz8HUlQAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfK7QAAABQvT1NDL1RpbWVz&cr;&lf;dGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAL4PXCm7&cr;&lf;yylfP3rn1QAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADwvTw4AAAAsL09TQy9Cb3VuZGluZ0JveFNp&cr;&lf;emUAAAAALGZmZgAAAAA/vzGQP9MzMz8G3F0AAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfK&cr;&lf;7gAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRl&cr;&lf;cgAsZmZmAAAAAL4RNAU7SylfP3xJugAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADwyleoAAAAsL09T&cr;&lf;Qy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/uzMzP9MzMz8Gc4IAAAAcL09TQy9GcmFtZU51&cr;&lf;bWJlcgAAAAAsaQAAAAfK7wAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAA&cr;&lf;AQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAL4RNAU7SylfP3xJugAAABgvT1NDL1ZlbG9jaXR5AAAA&cr;&lf;LGYAAAAAAAAAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/vzGQP9MzMz8GETQA&cr;&lf;AAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfK8AAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoN&cr;&lf;I2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAL4QSBc76KceP3uLrAAAABgv&cr;&lf;T1NDL1ZlbG9jaXR5AAAALGYAADuj1woAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAA&cr;&lf;AAA/wM5wP9MzMz8FtXQAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfK8QAAABQvT1NDL1Rp&cr;&lf;bWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAL4M&cr;&lf;FU26UbcXP3+XJAAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADyURnQAAAAsL09TQy9Cb3VuZGluZ0Jv&cr;&lf;eFNpemUAAAAALGZmZgAAAAA/wM5wP9MzMz8FZs8AAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAA&cr;&lf;AAfK8gAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0Nl&cr;&lf;bnRlcgAsZmZmAAAAAL4PJ7u8VqFiP4EdFQAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADyFh5QAAAAs&cr;&lf;L09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/uzMzP9MzMz8FHrgAAAAcL09TQy9GcmFt&cr;&lf;ZU51bWJlcgAAAAAsaQAAAAfK8wAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAA&cr;&lf;AAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAL4L+xa8kC3gP4DYRQAAABgvT1NDL1ZlbG9jaXR5&cr;&lf;AAAALGYAADvEm6YAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/uzMzP9MzMz8E&cr;&lf;470AAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfK9AAAABQvT1NDL1RpbWVzdGFtcAAALAAA&cr;&lf;AAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAL4NnoS8nUlSP4CTdQAA&cr;&lf;ABgvT1NDL1ZlbG9jaXR5AAAALGYAADtLKV8AAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZm&cr;&lf;ZgAAAAA/wM5wP9MzMz8Er08AAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfK9QAAABQvT1ND&cr;&lf;L1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAA&cr;&lf;AL4NG3G8kC3gP4BfBwAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADsWu5kAAAAsL09TQy9Cb3VuZGlu&cr;&lf;Z0JveFNpemUAAAAALGZmZgAAAAA/wAAAP9MzMz8EgW8AAAAcL09TQy9GcmFtZU51bWJlcgAAAAAs&cr;&lf;aQAAAAfK9gAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1ND&cr;&lf;L0NlbnRlcgAsZmZmAAAAAL4NG3G8kC3gP4BfBwAAABgvT1NDL1ZlbG9jaXR5AAAALGYAAAAAAAAA&cr;&lf;AAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/uzMzP9MzMz8EWh0AAAAcL09TQy9G&cr;&lf;cmFtZU51bWJlcgAAAAAsaQAAAAfK9wAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAA&cr;&lf;AAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAL4Mspa8uSOjP4DopwAAABgvT1NDL1ZlbG9j&cr;&lf;aXR5AAAALGYAADvYRNAAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/vZf2P9Mz&cr;&lf;Mz8EOVgAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfK+AAAABQvT1NDL1RpbWVzdGFtcAAA&cr;&lf;LAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAL4RTjy8tDlYP4E6&cr;&lf;kwAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADuqZMMAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAA&cr;&lf;LGZmZgAAAAA/vZf2P9MzMz8EGJMAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfK+QAAABQv&cr;&lf;T1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZm&cr;&lf;AAAAAL4PkJe8801qP4BE0AAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADwyleoAAAAsL09TQy9Cb3Vu&cr;&lf;ZGluZ0JveFNpemUAAAAALGZmZgAAAAA/vZf2P9d2YD8EBOoAAAAcL09TQy9GcmFtZU51bWJlcgAA&cr;&lf;AAAsaQAAAAfK+gAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAv&cr;&lf;T1NDL0NlbnRlcgAsZmZmAAAAAL4PkJe8801qP4BE0AAAABgvT1NDL1ZlbG9jaXR5AAAALGYAAAAA&cr;&lf;AAAAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/vzGQP9MzMz8D8UEAAAAcL09T&cr;&lf;Qy9GcmFtZU51bWJlcgAAAAAsaQAAAAfK+wAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRs&cr;&lf;ZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAL4Rgqq88an8P3/5cgAAABgvT1NDL1Zl&cr;&lf;bG9jaXR5AAAALGYAADs3gDQAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/vZf2&cr;&lf;P9MzMz8D3ZgAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfK/AAAABQvT1NDL1RpbWVzdGFt&cr;&lf;cAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAL4SBby8iM5w&cr;&lf;P4CqZQAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADxiGWUAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUA&cr;&lf;AAAALGZmZgAAAAA/vZf2P9MzMz8D0H0AAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfK/QAA&cr;&lf;ABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAs&cr;&lf;ZmZmAAAAAL4ZSvW7SylfP3/FBQAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADyH/LkAAAAsL09TQy9C&cr;&lf;b3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/wAAAP9MzMz8Dye8AAAAcL09TQy9GcmFtZU51bWJl&cr;&lf;cgAAAAAsaQAAAAfK/gAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAA&cr;&lf;ACAvT1NDL0NlbnRlcgAsZmZmAAAAAL4euFK7sPJ8P34bCQAAABgvT1NDL1ZlbG9jaXR5AAAALGYA&cr;&lf;ADwM5wQAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/uzMzP9qpkz8FbV0AAAAc&cr;&lf;L09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfK/wAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1&cr;&lf;bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAL4cKPa7cnuzP3752wAAABgvT1ND&cr;&lf;L1ZlbG9jaXR5AAAALGYAADuQLeAAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/&cr;&lf;vzGQP9qpkz8Jf2MAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLAAAAABQvT1NDL1RpbWVz&cr;&lf;dGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAL4TdLw8&cr;&lf;QVTKP336RAAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADyURnQAAAAsL09TQy9Cb3VuZGluZ0JveFNp&cr;&lf;emUAAAAALGZmZgAAAAA/uzMzP9qpkz8NKI0AAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfL&cr;&lf;AQAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRl&cr;&lf;cgAsZmZmAAAAAL4TdLw8QVTKP336RAAAABgvT1NDL1ZlbG9jaXR5AAAALGYAAAAAAAAAAAAsL09T&cr;&lf;Qy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/uzMzP9u80z8Qo9cAAAAcL09TQy9GcmFtZU51&cr;&lf;bWJlcgAAAAAsaQAAAAfLAgAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAA&cr;&lf;AQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAL4R64U8YHX3P3tQsQAAABgvT1NDL1ZlbG9jaXR5AAAA&cr;&lf;LGYAADwvTw4AAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/vZf2P9u80z8VWbQA&cr;&lf;AAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLAwAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoN&cr;&lf;I2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAL4FUya8AxJvP4CdSQAAABgv&cr;&lf;T1NDL1ZlbG9jaXR5AAAALGYAAD0LQ5YAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAA&cr;&lf;AAA/vZf2P9u80z8ajBUAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLBAAAABQvT1NDL1Rp&cr;&lf;bWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAL4J&cr;&lf;UYO6t4A0P3/y5QAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADwVGCsAAAAsL09TQy9Cb3VuZGluZ0Jv&cr;&lf;eFNpemUAAAAALGZmZgAAAAA/uzMzP9qpkz8f2K4AAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAA&cr;&lf;AAfLBQAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0Nl&cr;&lf;bnRlcgAsZmZmAAAAAL4EGJO7k3S8P3+DewAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADvLKV8AAAAs&cr;&lf;L09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/uzMzP9qpkz8k92YAAAAcL09TQy9GcmFt&cr;&lf;ZU51bWJlcgAAAAAsaQAAAAfLBgAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAA&cr;&lf;AAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAL33Zf68CaAnP35CWwAAABgvT1NDL1ZlbG9jaXR5&cr;&lf;AAAALGYAADwqZMMAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/wM5wP9qpkz8p&cr;&lf;s9AAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLBwAAABQvT1NDL1RpbWVzdGFtcAAALAAA&cr;&lf;AAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAL3rhR+8eQlsP4At4AAA&cr;&lf;ABgvT1NDL1ZlbG9jaXR5AAAALGYAADxGPxQAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZm&cr;&lf;ZgAAAAA/wM5wP9qpkz8sImgAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLCAAAABQvT1ND&cr;&lf;L1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAA&cr;&lf;AL3jvNO6t4A0P37zTQAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADx8UEgAAAAsL09TQy9Cb3VuZGlu&cr;&lf;Z0JveFNpemUAAAAALGZmZgAAAAA/wZmaP9qpkz8tXPsAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAs&cr;&lf;aQAAAAfLCQAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1ND&cr;&lf;L0NlbnRlcgAsZmZmAAAAAL3a7mO8C0OWP3s9CAAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADyIznAA&cr;&lf;AAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/wZmaP9qpkz8vVZsAAAAcL09TQy9G&cr;&lf;cmFtZU51bWJlcgAAAAAsaQAAAAfLCgAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAA&cr;&lf;AAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAL3a7mO8C0OWP3s9CAAAABgvT1NDL1ZlbG9j&cr;&lf;aXR5AAAALGYAAAAAAAAAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/wZmaP9qp&cr;&lf;kz8xqfwAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLCwAAABQvT1NDL1RpbWVzdGFtcAAA&cr;&lf;LAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAL3tKI082ETQP3nH&cr;&lf;egAAABgvT1NDL1ZlbG9jaXR5AAAALGYAAD0VgQYAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAA&cr;&lf;LGZmZgAAAAA/wZmaP9mZmj80GJMAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLDAAAABQv&cr;&lf;T1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZm&cr;&lf;AAAAAL3jU/g8wvg4P3nOBwAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADu0OVgAAAAsL09TQy9Cb3Vu&cr;&lf;ZGluZ0JveFNpemUAAAAALGZmZgAAAAA/wZmaP9mZmj82c4IAAAAcL09TQy9GcmFtZU51bWJlcgAA&cr;&lf;AAAsaQAAAAfLDQAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAv&cr;&lf;T1NDL0NlbnRlcgAsZmZmAAAAAL3SvTw8cnuzP3h5PgAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADxW&cr;&lf;oWIAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/wZmaP9mZmj84oJAAAAAcL09T&cr;&lf;Qy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLDgAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRs&cr;&lf;ZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAL3SvTw8cnuzP3h5PgAAABgvT1NDL1Zl&cr;&lf;bG9jaXR5AAAALGYAAAAAAAAAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/yAAA&cr;&lf;P9mZmj82z0IAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLDwAAABQvT1NDL1RpbWVzdGFt&cr;&lf;cAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAL3TJhg8yylf&cr;&lf;P3ckdAAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADw5I6MAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUA&cr;&lf;AAAALGZmZgAAAAA/yAAAP9MzMz8xYeUAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLEAAA&cr;&lf;ABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAs&cr;&lf;ZmZmAAAAAL3SH/M813MZP3X2/QAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADugkC4AAAAsL09TQy9C&cr;&lf;b3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/yAAAP9MzMz8px3oAAAAcL09TQy9GcmFtZU51bWJl&cr;&lf;cgAAAAAsaQAAAAfLEQAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAA&cr;&lf;ACAvT1NDL0NlbnRlcgAsZmZmAAAAAL3LXcw8+36RP3ULDwAAABgvT1NDL1ZlbG9jaXR5AAAALGYA&cr;&lf;ADvU/fQAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/yAAAP9MzMz8fqs4AAAAc&cr;&lf;L09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLEgAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1&cr;&lf;bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAL3D/l083gDSP3g3tQAAABgvT1ND&cr;&lf;L1ZlbG9jaXR5AAAALGYAADxbi6wAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/&cr;&lf;yAAAP9u80z8UlRgAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLEwAAABQvT1NDL1RpbWVz&cr;&lf;dGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAL3D/l08&cr;&lf;3gDSP3g3tQAAABgvT1NDL1ZlbG9jaXR5AAAALGYAAAAAAAAAAAAsL09TQy9Cb3VuZGluZ0JveFNp&cr;&lf;emUAAAAALGZmZgAAAAA/xzGQP+RDLT8NdzIAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfL&cr;&lf;FAAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRl&cr;&lf;cgAsZmZmAAAAAL28nu09DOcEP3cDsAAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADwaAnUAAAAsL09T&cr;&lf;Qy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/xmZmP+zMzT8MVtYAAAAcL09TQy9GcmFtZU51&cr;&lf;bWJlcgAAAAAsaQAAAAfLFQAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAA&cr;&lf;AQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAL2X9is9HoPkP3jvNQAAABgvT1NDL1ZlbG9jaXR5AAAA&cr;&lf;LGYAADyjBVMAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/xmZmP+zMzT8K4UgA&cr;&lf;AAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLFgAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoN&cr;&lf;I2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAL1X2/U9IwVTP3t+kQAAABgv&cr;&lf;T1NDL1ZlbG9jaXR5AAAALGYAADzC+DgAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAA&cr;&lf;AAA/yAAAP/EP+T8J7swAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLFwAAABQvT1NDL1Rp&cr;&lf;bWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAL1X&cr;&lf;2/U9IwVTP3t+kQAAABgvT1NDL1ZlbG9jaXR5AAAALGYAAAAAAAAAAAAsL09TQy9Cb3VuZGluZ0Jv&cr;&lf;eFNpemUAAAAALGZmZgAAAAA/yAAAP/EP+T8MuSQAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAA&cr;&lf;AAfLGAAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0Nl&cr;&lf;bnRlcgAsZmZmAAAAAL1uy/s9w/5dP3igkAAAABgvT1NDL1ZlbG9jaXR5AAAALGYAAD1qs2gAAAAs&cr;&lf;L09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/zZf2P/EP+T8RgqoAAAAcL09TQy9GcmFt&cr;&lf;ZU51bWJlcgAAAAAsaQAAAAfLGQAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAA&cr;&lf;AAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAALxU/fQ9kC3gP3HyEwAAABgvT1NDL1ZlbG9jaXR5&cr;&lf;AAAALGYAAD1t+kQAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/zZf2P/EP+T8T&cr;&lf;LKUAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLGgAAABQvT1NDL1RpbWVzdGFtcAAALAAA&cr;&lf;AAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAALxJhfA9ruYyP3LDygAA&cr;&lf;ABgvT1NDL1ZlbG9jaXR5AAAALGYAADx8UEgAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZm&cr;&lf;ZgAAAAA/zmZmP/EP+T8PigkAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLGwAAABQvT1ND&cr;&lf;L1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAA&cr;&lf;ADxRtxc91Zs9P3iGWQAAABgvT1NDL1ZlbG9jaXR5AAAALGYAAD0eGwkAAAAsL09TQy9Cb3VuZGlu&cr;&lf;Z0JveFNpemUAAAAALGZmZgAAAAA/zmZmP/EP+T8I/FAAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAs&cr;&lf;aQAAAAfLHAAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1ND&cr;&lf;L0NlbnRlcgAsZmZmAAAAADye7MA9y13MP3ckdAAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADwiM5wA&cr;&lf;AAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/1AGjP/EP+T8DJhgAAAAcL09TQy9G&cr;&lf;cmFtZU51bWJlcgAAAAAsaQAAAAfLHQAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAA&cr;&lf;AAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD0BBiU9w/5dP3gJ1QAAABgvT1NDL1ZlbG9j&cr;&lf;aXR5AAAALGYAADxWoWIAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/1MzNP/EP&cr;&lf;+T7/lyQAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLHgAAABQvT1NDL1RpbWVzdGFtcAAA&cr;&lf;LAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD0BBiU9w/5dP3gJ&cr;&lf;1QAAABgvT1NDL1ZlbG9jaXR5AAAALGYAAAAAAAAAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAA&cr;&lf;LGZmZgAAAAA/1MzNP/EP+T78KPYAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLHwAAABQv&cr;&lf;T1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZm&cr;&lf;AAAAAD0n7549x+KCP3tQsQAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADyDEm8AAAAsL09TQy9Cb3Vu&cr;&lf;ZGluZ0JveFNpemUAAAAALGZmZgAAAAA/1MzNP/EP+T761CwAAAAcL09TQy9GcmFtZU51bWJlcgAA&cr;&lf;AAAsaQAAAAfLIAAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAv&cr;&lf;T1NDL0NlbnRlcgAsZmZmAAAAAD1NnoQ9yvTxP3ztkQAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADw3&cr;&lf;gDQAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/1MzNP/EP+T76xxEAAAAcL09T&cr;&lf;Qy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLIQAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRs&cr;&lf;ZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD2GWUs90BOpP36RAAAAABgvT1NDL1Zl&cr;&lf;bG9jaXR5AAAALGYAADyJoCcAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/2M5w&cr;&lf;P/EP+T77cXYAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLIgAAABQvT1NDL1RpbWVzdGFt&cr;&lf;cAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD2GWUs90BOp&cr;&lf;P36RAAAAABgvT1NDL1ZlbG9jaXR5AAAALGYAAAAAAAAAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUA&cr;&lf;AAAALGZmZgAAAAA/2zMzP/EP+T78kdEAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLIwAA&cr;&lf;ABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAs&cr;&lf;ZmZmAAAAAD2oWHk99cKPP4EP+QAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADzopx4AAAAsL09TQy9C&cr;&lf;b3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/2zMzP/EP+T79zGQAAAAcL09TQy9GcmFtZU51bWJl&cr;&lf;cgAAAAAsaQAAAAfLJAAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAA&cr;&lf;ACAvT1NDL0NlbnRlcgAsZmZmAAAAAD3KjBU+Gp++P4LuYwAAABgvT1NDL1ZlbG9jaXR5AAAALGYA&cr;&lf;AD0cDr8AAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/2zMzP/EP+T7/IS0AAAAc&cr;&lf;L09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLJQAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1&cr;&lf;bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD3mz0I+IrauP4SbpgAAABgvT1ND&cr;&lf;L1ZlbG9jaXR5AAAALGYAADyowVUAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/&cr;&lf;2zMzP/EP+T8ALeAAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLJgAAABQvT1NDL1RpbWVz&cr;&lf;dGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD3yEtc+&cr;&lf;KKceP4U1qAAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADwYXwcAAAAsL09TQy9Cb3VuZGluZ0JveFNp&cr;&lf;emUAAAAALGZmZgAAAAA/4ZmaP/EP+T8At4AAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfL&cr;&lf;JwAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRl&cr;&lf;cgAsZmZmAAAAAD3yEtc+KKceP4U1qAAAABgvT1NDL1ZlbG9jaXR5AAAALGYAAAAAAAAAAAAsL09T&cr;&lf;Qy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/6AAAP/EP+T8BOpMAAAAcL09TQy9GcmFtZU51&cr;&lf;bWJlcgAAAAAsaQAAAAfLKAAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAA&cr;&lf;AQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD39v0g+LrHEP4ZI6QAAABgvT1NDL1ZlbG9jaXR5AAAA&cr;&lf;LGYAADw/sVsAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/tzGQP/EP+T8Bo24A&cr;&lf;AAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLKQAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoN&cr;&lf;I2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD4FHrg+MNhFP4cUEgAAABgv&cr;&lf;T1NDL1ZlbG9jaXR5AAAALGYAADwTdLwAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAA&cr;&lf;AAA/tzGQP/EP+T8B/y4AAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLKgAAABQvT1NDL1Rp&cr;&lf;bWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD4O&cr;&lf;B18+M2ehP4gnUgAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADxLKV8AAAAsL09TQy9Cb3VuZGluZ0Jv&cr;&lf;eFNpemUAAAAALGZmZgAAAAA/uzMzP/EP+T8CTdMAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAA&cr;&lf;AAfLKwAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0Nl&cr;&lf;bnRlcgAsZmZmAAAAAD4OB18+M2ehP4gnUgAAABgvT1NDL1ZlbG9jaXR5AAAALGYAAAAAAAAAAAAs&cr;&lf;L09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/vZf2P/EP+T8Cj1wAAAAcL09TQy9GcmFt&cr;&lf;ZU51bWJlcgAAAAAsaQAAAAfLLAAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAA&cr;&lf;AAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD4UYKo+NFOPP4kWhwAAABgvT1NDL1ZlbG9jaXR5&cr;&lf;AAAALGYAADwdSVIAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/xAGjP/ZmZj8C&cr;&lf;w8oAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLLQAAABQvT1NDL1RpbWVzdGFtcAAALAAA&cr;&lf;AAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD4Zs9A+OxW1P4oFvAAA&cr;&lf;ABgvT1NDL1ZlbG9jaXR5AAAALGYAADw13MYAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZm&cr;&lf;ZgAAAAA/xAGjP/ZmZj8C6xwAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLLgAAABQvT1ND&cr;&lf;L1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAA&cr;&lf;AD4mTDA+R5PeP4vTwwAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADy2rn0AAAAsL09TQy9Cb3VuZGlu&cr;&lf;Z0JveFNpemUAAAAALGZmZgAAAAA/vmZmP/EP+T8FUyYAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAs&cr;&lf;aQAAAAfLLwAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1ND&cr;&lf;L0NlbnRlcgAsZmZmAAAAAD4mTDA+R5PeP4vTwwAAABgvT1NDL1ZlbG9jaXR5AAAALGYAAAAAAAAA&cr;&lf;AAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/wZmaP/EP+T8KufUAAAAcL09TQy9G&cr;&lf;cmFtZU51bWJlcgAAAAAsaQAAAAfLMAAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAA&cr;&lf;AAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD4tDlY+WCqZP4yEtgAAABgvT1NDL1ZlbG9j&cr;&lf;aXR5AAAALGYAADyV6eIAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/wZmaP/EP&cr;&lf;+T8RdY4AAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLMQAAABQvT1NDL1RpbWVzdGFtcAAA&cr;&lf;LAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD4v0iA+beANP4zC&cr;&lf;+AAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADywIMUAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAA&cr;&lf;LGZmZgAAAAA/wZmaP/EP+T8YhlkAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLMgAAABQv&cr;&lf;T1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZm&cr;&lf;AAAAAD4wOvs+fIS2P41CxAAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADxye7MAAAAsL09TQy9Cb3Vu&cr;&lf;ZGluZ0JveFNpemUAAAAALGZmZgAAAAA/uzMzP/EP+T8ho24AAAAcL09TQy9GcmFtZU51bWJlcgAA&cr;&lf;AAAsaQAAAAfLMwAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAv&cr;&lf;T1NDL0NlbnRlcgAsZmZmAAAAAD4wOvs+fIS2P41CxAAAABgvT1NDL1ZlbG9jaXR5AAAALGYAAAAA&cr;&lf;AAAAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/uzMzP/EP+T8q59UAAAAcL09T&cr;&lf;Qy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLNAAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRs&cr;&lf;ZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD424us+gVTKP47CJwAAABgvT1NDL1Zl&cr;&lf;bG9jaXR5AAAALGYAADxw2EUAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/tMzN&cr;&lf;P/EP+T8xysEAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLNQAAABQvT1NDL1RpbWVzdGFt&cr;&lf;cAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD46kqM+gYk3&cr;&lf;P48aoAAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADuTdLwAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUA&cr;&lf;AAAALGZmZgAAAAA/tMzNP/EP+T8yQLgAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLNgAA&cr;&lf;ABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAs&cr;&lf;ZmZmAAAAAD5C+Dg+gMScP4+GwgAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADwTdLwAAAAsL09TQy9C&cr;&lf;b3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/qAAAP/EP+T8rSiMAAAAcL09TQy9GcmFtZU51bWJl&cr;&lf;cgAAAAAsaQAAAAfLNwAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAA&cr;&lf;ACAvT1NDL0NlbnRlcgAsZmZmAAAAAD5C+Dg+gMScP4+GwgAAABgvT1NDL1ZlbG9jaXR5AAAALGYA&cr;&lf;AAAAAAAAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/mzMzP/EP+T8gnUkAAAAc&cr;&lf;L09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLOAAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1&cr;&lf;bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD5N0vI+g0bcP5CDEgAAABgvT1ND&cr;&lf;L1ZlbG9jaXR5AAAALGYAADxlYEIAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/&cr;&lf;lMzNP/EP+T8UjooAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLOQAAABQvT1NDL1RpbWVz&cr;&lf;dGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD5Yraw+&cr;&lf;hckdP5KFiAAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADygkC4AAAAsL09TQy9Cb3VuZGluZ0JveFNp&cr;&lf;emUAAAAALGZmZgAAAAA/lMzNP/EP+T8IeT4AAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfL&cr;&lf;OgAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRl&cr;&lf;cgAsZmZmAAAAAD5bItE+fAGjP5PTwwAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADyWu5kAAAAsL09T&cr;&lf;Qy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/lAGjP/EP+T7/BvcAAAAcL09TQy9GcmFtZU51&cr;&lf;bWJlcgAAAAAsaQAAAAfLOwAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAA&cr;&lf;AQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD5bItE+fAGjP5PTwwAAABgvT1NDL1ZlbG9jaXR5AAAA&cr;&lf;LGYAAAAAAAAAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/jMzNP/EP+T7w5WAA&cr;&lf;AAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLPAAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoN&cr;&lf;I2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD5mtQs+ZHRUP5T6rQAAABgv&cr;&lf;T1NDL1ZlbG9jaXR5AAAALGYAADze0okAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAA&cr;&lf;AAA/gZmaP/EP+T7h8hMAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLPQAAABQvT1NDL1Rp&cr;&lf;bWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD5p&cr;&lf;rUM+YEGJP5T3ZgAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADuj1woAAAAsL09TQy9Cb3VuZGluZ0Jv&cr;&lf;eFNpemUAAAAALGZmZgAAAAA/gZmaP/EP+T7YKpkAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAA&cr;&lf;AAfLPgAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0Nl&cr;&lf;bnRlcgAsZmZmAAAAAD5q59U+XrhSP5UlRgAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADsdSVIAAAAs&cr;&lf;L09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/gM5wP/EP+T7V3MYAAAAcL09TQy9GcmFt&cr;&lf;ZU51bWJlcgAAAAAsaQAAAAfLPwAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAA&cr;&lf;AAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD5q59U+XrhSP5UlRgAAABgvT1NDL1ZlbG9jaXR5&cr;&lf;AAAALGYAAAAAAAAAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/dmZmP/EP+T7X&cr;&lf;ztkAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLQAAAABQvT1NDL1RpbWVzdGFtcAAALAAA&cr;&lf;AAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD5yLQ4+WK2sP5XZfwAA&cr;&lf;ABgvT1NDL1ZlbG9jaXR5AAAALGYAADww8nwAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZm&cr;&lf;ZgAAAAA/dmZmP/EP+T7b9IgAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLQQAAABQvT1ND&cr;&lf;L1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAA&cr;&lf;AD54hlk+VeniP5ZFogAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADv1wo8AAAAsL09TQy9Cb3VuZGlu&cr;&lf;Z0JveFNpemUAAAAALGZmZgAAAAA/dmZmP/EP+T7hIFwAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAs&cr;&lf;aQAAAAfLQgAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1ND&cr;&lf;L0NlbnRlcgAsZmZmAAAAAD6CqZM+URnOP5aufQAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADxiGWUA&cr;&lf;AAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/dmZmP/EP+T7mgJ0AAAAcL09TQy9G&cr;&lf;cmFtZU51bWJlcgAAAAAsaQAAAAfLQwAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAA&cr;&lf;AAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD6CqZM+URnOP5aufQAAABgvT1NDL1ZlbG9j&cr;&lf;aXR5AAAALGYAAAAAAAAAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/aZmaP/EP&cr;&lf;+T7rn1YAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLRAAAABQvT1NDL1RpbWVzdGFtcAAA&cr;&lf;LAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD6F/Ys+ULDyP5dS&cr;&lf;VAAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADwEtd0AAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAA&cr;&lf;LGZmZgAAAAA/aZmaP/EP+T7wSBcAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLRQAAABQv&cr;&lf;T1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZm&cr;&lf;AAAAAD6IjOc+Um6YP5eT3gAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADu6xxEAAAAsL09TQy9Cb3Vu&cr;&lf;ZGluZ0JveFNpemUAAAAALGZmZgAAAAA/aZmaP/EP+T70YKoAAAAcL09TQy9GcmFtZU51bWJlcgAA&cr;&lf;AAAsaQAAAAfLRgAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAv&cr;&lf;T1NDL0NlbnRlcgAsZmZmAAAAAD6KSow+U6kqP5figgAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADuM&cr;&lf;5wQAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/aZmaP/EP+T736RAAAAAcL09T&cr;&lf;Qy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLRwAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRs&cr;&lf;ZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD6KSow+U6kqP5figgAAABgvT1NDL1Zl&cr;&lf;bG9jaXR5AAAALGYAAAAAAAAAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/aZma&cr;&lf;P/EP+T761CwAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLSAAAABQvT1NDL1RpbWVzdGFt&cr;&lf;cAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD6XWOI+Zckd&cr;&lf;P5fsVwAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADz+xW0AAAAsL09TQy9Cb3VuZGluZ0JveFNpemUA&cr;&lf;AAAALGZmZgAAAAA/YzMzP/EP+T79SVIAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLSQAA&cr;&lf;ABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAs&cr;&lf;ZmZmAAAAAD6akqM+awIMP5h5PgAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADwVGCsAAAAsL09TQy9C&cr;&lf;b3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/YzMzP/EP+T76a1EAAAAcL09TQy9GcmFtZU51bWJl&cr;&lf;cgAAAAAsaQAAAAfLSgAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAA&cr;&lf;ACAvT1NDL0NlbnRlcgAsZmZmAAAAAD6dsi0+awIMP5k92QAAABgvT1NDL1ZlbG9jaXR5AAAALGYA&cr;&lf;ADwM5wQAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/XMzNP/EP+T7w5WAAAAAc&cr;&lf;L09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLSwAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1&cr;&lf;bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD6dsi0+awIMP5k92QAAABgvT1ND&cr;&lf;L1ZlbG9jaXR5AAAALGYAAAAAAAAAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/&cr;&lf;XMzNP/EP+T7kTQEAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLTAAAABQvT1NDL1RpbWVz&cr;&lf;dGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD6jlYE+&cr;&lf;a59WP5nrhQAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADxQE6kAAAAsL09TQy9Cb3VuZGluZ0JveFNp&cr;&lf;emUAAAAALGZmZgAAAAA/Wy/sP/EP+T7W4usAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfL&cr;&lf;TQAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRl&cr;&lf;cgAsZmZmAAAAAD6nRTk+bxqgP5q59QAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADwlengAAAAsL09T&cr;&lf;Qy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/Wy/sP/EP+T7J4bEAAAAcL09TQy9GcmFtZU51&cr;&lf;bWJlcgAAAAAsaQAAAAfLTgAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAA&cr;&lf;AQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD6rAgw+bi6yP5rQ5QAAABgvT1NDL1ZlbG9jaXR5AAAA&cr;&lf;LGYAADvvNNcAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/UAAAP/EP+T6+ANIA&cr;&lf;AAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLTwAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoN&cr;&lf;I2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD6rAgw+bi6yP5rQ5QAAABgv&cr;&lf;T1NDL1ZlbG9jaXR5AAAALGYAAAAAAAAAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAA&cr;&lf;AAA/UAAAP/EP+T6zjvMAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLUAAAABQvT1NDL1Rp&cr;&lf;bWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD6u&cr;&lf;pKk+beANP5qfvgAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADvvNNcAAAAsL09TQy9Cb3VuZGluZ0Jv&cr;&lf;eFNpemUAAAAALGZmZgAAAAA/UAAAP/EP+T6qjBUAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAA&cr;&lf;AAfLUQAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0Nl&cr;&lf;bnRlcgAsZmZmAAAAAD6wb2k+bsv7P5qPXAAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADtye7MAAAAs&cr;&lf;L09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/UAAAP/EP+T6i+DgAAAAcL09TQy9GcmFt&cr;&lf;ZU51bWJlcgAAAAAsaQAAAAfLUgAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAA&cr;&lf;AAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD6zjvM+cFUyP5thEwAAABgvT1NDL1ZlbG9jaXR5&cr;&lf;AAAALGYAADwR0U4AAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/TmmtP/EP+T6c&cr;&lf;uSQAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLUwAAABQvT1NDL1RpbWVzdGFtcAAALAAA&cr;&lf;AAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD6zjvM+cFUyP5thEwAA&cr;&lf;ABgvT1NDL1ZlbG9jaXR5AAAALGYAAAAAAAAAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZm&cr;&lf;ZgAAAAA/TMzNP/EP+T6hbwAAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLVAAAABQvT1ND&cr;&lf;L1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAA&cr;&lf;AD60HyE+ckdFP5wo9gAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADvU/fQAAAAsL09TQy9Cb3VuZGlu&cr;&lf;Z0JveFNpemUAAAAALGZmZgAAAAA/TmmtP/EP+T60BOoAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAs&cr;&lf;aQAAAAfLVQAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1ND&cr;&lf;L0NlbnRlcgAsZmZmAAAAAD608Ng+b52yP51CxAAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADwVGCsA&cr;&lf;AAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/TmmtP/EP+T7C6xwAAAAcL09TQy9G&cr;&lf;cmFtZU51bWJlcgAAAAAsaQAAAAfLVgAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAA&cr;&lf;AAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD61TJg+cQyzP52UrwAAABgvT1NDL1ZlbG9j&cr;&lf;aXR5AAAALGYAADs+De0AAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/TMzNP/EP&cr;&lf;+T7GtQsAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLVwAAABQvT1NDL1RpbWVzdGFtcAAA&cr;&lf;LAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD61TJg+cQyzP52U&cr;&lf;rwAAABgvT1NDL1ZlbG9jaXR5AAAALGYAAAAAAAAAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAA&cr;&lf;LGZmZgAAAAA/TMzNP/EP+T7EJa8AAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLWAAAABQv&cr;&lf;T1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZm&cr;&lf;AAAAAD62bPQ+b52yP55MMAAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADvLKV8AAAAsL09TQy9Cb3Vu&cr;&lf;ZGluZ0JveFNpemUAAAAALGZmZgAAAAA/TmmtP/EP+T6+T3YAAAAcL09TQy9GcmFtZU51bWJlcgAA&cr;&lf;AAAsaQAAAAfLWQAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAv&cr;&lf;T1NDL0NlbnRlcgAsZmZmAAAAAD62bPQ+a+36P58QywAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADvl&cr;&lf;YEIAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/TmmtP/EP+T63F1kAAAAcL09T&cr;&lf;Qy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLWgAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRs&cr;&lf;ZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD65mZo+XF1kP5/ISwAAABgvT1NDL1Zl&cr;&lf;bG9jaXR5AAAALGYAADyOinIAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/Tmmt&cr;&lf;P/EP+T6vkJcAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLWwAAABQvT1NDL1RpbWVzdGFt&cr;&lf;cAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD65mZo+XF1k&cr;&lf;P5/ISwAAABgvT1NDL1ZlbG9jaXR5AAAALGYAAAAAAAAAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUA&cr;&lf;AAAALGZmZgAAAAA/TmmtP/EP+T6ocrAAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLXAAA&cr;&lf;ABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAs&cr;&lf;ZmZmAAAAAD68kdE+VjiGP6DRtwAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADw/sVsAAAAsL09TQy9C&cr;&lf;b3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/UAAAP/EP+T6nEMsAAAAcL09TQy9GcmFtZU51bWJl&cr;&lf;cgAAAAAsaQAAAAfLXQAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAA&cr;&lf;ACAvT1NDL0NlbnRlcgAsZmZmAAAAAD68UEg+VRgrP6IWHgAAABgvT1NDL1ZlbG9jaXR5AAAALGYA&cr;&lf;ADwj1woAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/UAAAP/EP+T6tATsAAAAc&cr;&lf;L09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLXgAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1&cr;&lf;bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD7Kcd4+SaAnP6LHEQAAABgvT1ND&cr;&lf;L1ZlbG9jaXR5AAAALGYAADz3Zf4AAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/&cr;&lf;UAAAP/EP+T62ehAAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLXwAAABQvT1NDL1RpbWVz&cr;&lf;dGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD7Kcd4+&cr;&lf;SaAnP6LHEQAAABgvT1NDL1ZlbG9jaXR5AAAALGYAAAAAAAAAAAAsL09TQy9Cb3VuZGluZ0JveFNp&cr;&lf;emUAAAAALGZmZgAAAAA/UAAAP/EP+T7BOpMAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfL&cr;&lf;YAAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRl&cr;&lf;cgAsZmZmAAAAAD7GmtQ+SdSVP6PaUQAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADw5I6MAAAAsL09T&cr;&lf;Qy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/UAAAP/EP+T7L7foAAAAcL09TQy9GcmFtZU51&cr;&lf;bWJlcgAAAAAsaQAAAAfLYQAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAA&cr;&lf;AQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD6/Bvc+Q2ETP6UeuAAAABgvT1NDL1ZlbG9jaXR5AAAA&cr;&lf;LGYAADya1CwAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/UAAAP/EP+T7V6eIA&cr;&lf;AAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLYgAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoN&cr;&lf;I2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD64Uew+RsInP6Z2yQAAABgv&cr;&lf;T1NDL1ZlbG9jaXR5AAAALGYAADyM5wQAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAA&cr;&lf;AAA/XMzNP/EP+T7euFIAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLYwAAABQvT1NDL1Rp&cr;&lf;bWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD64&cr;&lf;Uew+RsInP6Z2yQAAABgvT1NDL1ZlbG9jaXR5AAAALGYAAAAAAAAAAAAsL09TQy9Cb3VuZGluZ0Jv&cr;&lf;eFNpemUAAAAALGZmZgAAAAA/aZmaP/EP+T7mWUsAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAA&cr;&lf;AAfLZAAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0Nl&cr;&lf;bnRlcgAsZmZmAAAAAD6w8nw+Q8nvP6W1dAAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADyCQLgAAAAs&cr;&lf;L09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/czMzP/EP+T7sv7EAAAAcL09TQy9GcmFt&cr;&lf;ZU51bWJlcgAAAAAsaQAAAAfLZQAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAA&cr;&lf;AAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD6vkJc+Q6+4P6ZprQAAABgvT1NDL1ZlbG9jaXR5&cr;&lf;AAAALGYAADvLKV8AAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/czMzP/EP+T7y&cr;&lf;EtcAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLZgAAABQvT1NDL1RpbWVzdGFtcAAALAAA&cr;&lf;AAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD6rrHE+UojOP6Z2yQAA&cr;&lf;ABgvT1NDL1ZlbG9jaXR5AAAALGYAADyFh5QAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZm&cr;&lf;ZgAAAAA/hZf2P/EP+T72bPQAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLZwAAABQvT1ND&cr;&lf;L1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAA&cr;&lf;AD6rrHE+UojOP6Z2yQAAABgvT1NDL1ZlbG9jaXR5AAAALGYAAAAAAAAAAAAsL09TQy9Cb3VuZGlu&cr;&lf;Z0JveFNpemUAAAAALGZmZgAAAAA/oZmaP/EP+T8CGWUAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAs&cr;&lf;aQAAAAfLaAAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1ND&cr;&lf;L0NlbnRlcgAsZmZmAAAAAD6opx4+XMY/P6Z9VgAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADw/sVsA&cr;&lf;AAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/rmZmP/EP+T8PNNcAAAAcL09TQy9G&cr;&lf;cmFtZU51bWJlcgAAAAAsaQAAAAfLaQAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAA&cr;&lf;AAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD6iWu4+aZMMP6cd5wAAABgvT1NDL1ZlbG9j&cr;&lf;aXR5AAAALGYAADyURnQAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/rmZmP/EP&cr;&lf;+T8exW0AAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLagAAABQvT1NDL1RpbWVzdGFtcAAA&cr;&lf;LAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD6eDe0+c7ZGP6cx&cr;&lf;kAAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADxU/fQAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAA&cr;&lf;LGZmZgAAAAA/tMzNP/EP+T8uinIAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLawAAABQv&cr;&lf;T1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZm&cr;&lf;AAAAAD6eDe0+c7ZGP6cxkAAAABgvT1NDL1ZlbG9jaXR5AAAALGYAAAAAAAAAAAAsL09TQy9Cb3Vu&cr;&lf;ZGluZ0JveFNpemUAAAAALGZmZgAAAAA/uzMzP/EP+T86wIMAAAAcL09TQy9GcmFtZU51bWJlcgAA&cr;&lf;AAAsaQAAAAfLbAAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAv&cr;&lf;T1NDL0NlbnRlcgAsZmZmAAAAAD6Z9Vo+gOvuP6ZzggAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADyL&cr;&lf;Q5YAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/uzMzP/EP+T9CEtcAAAAcL09T&cr;&lf;Qy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLbQAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRs&cr;&lf;ZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD6WlEY+hE0BP6Z9VgAAABgvT1NDL1Zl&cr;&lf;bG9jaXR5AAAALGYAADwYXwcAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/uzMz&cr;&lf;P/EP+T9I1P4AAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLbgAAABQvT1NDL1RpbWVzdGFt&cr;&lf;cAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD6Tgdg+iV6e&cr;&lf;P6VGCwAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADx1wo8AAAAsL09TQy9Cb3VuZGluZ0JveFNpemUA&cr;&lf;AAAALGZmZgAAAAA/wM5wP/EP+T9OVgQAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLbwAA&cr;&lf;ABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAs&cr;&lf;ZmZmAAAAAD6Tgdg+iV6eP6VGCwAAABgvT1NDL1ZlbG9jaXR5AAAALGYAAAAAAAAAAAAsL09TQy9C&cr;&lf;b3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/wZmaP/EP+T9Qo9cAAAAcL09TQy9GcmFtZU51bWJl&cr;&lf;cgAAAAAsaQAAAAfLcAAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAA&cr;&lf;ACAvT1NDL0NlbnRlcgAsZmZmAAAAAD6Qb2k+h5PeP6UvGwAAABgvT1NDL1ZlbG9jaXR5AAAALGYA&cr;&lf;ADvlYEIAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/wZmaP/EP+T9RGc4AAAAc&cr;&lf;L09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLcQAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1&cr;&lf;bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD6Nq58+htxdP6U/fQAAABgvT1ND&cr;&lf;L1ZlbG9jaXR5AAAALGYAADu0OVgAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/&cr;&lf;wZmaP/EP+T9QfIUAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLcgAAABQvT1NDL1RpbWVz&cr;&lf;dGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD6Ln1Y+&cr;&lf;h19wP6VmzwAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADuM5wQAAAAsL09TQy9Cb3VuZGluZ0JveFNp&cr;&lf;emUAAAAALGZmZgAAAAA/rMzNP/EP+T9KMFUAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfL&cr;&lf;cwAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRl&cr;&lf;cgAsZmZmAAAAAD6Ln1Y+h19wP6VmzwAAABgvT1NDL1ZlbG9jaXR5AAAALGYAAAAAAAAAAAAsL09T&cr;&lf;Qy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/mzMzP/EP+T89B8gAAAAcL09TQy9GcmFtZU51&cr;&lf;bWJlcgAAAAAsaQAAAAfLdAAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAA&cr;&lf;AQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD6Heac+hSvUP6V6eAAAABgvT1NDL1ZlbG9jaXR5AAAA&cr;&lf;LGYAADwWu5kAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/lMzNP/EP+T8tIf8A&cr;&lf;AAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLdQAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoN&cr;&lf;I2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD6C6xw+gdfcP6YeTwAAABgv&cr;&lf;T1NDL1ZlbG9jaXR5AAAALGYAADxEm6YAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAA&cr;&lf;AAA/lMzNP/EP+T8c5wQAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLdgAAABQvT1NDL1Rp&cr;&lf;bWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD5+&cr;&lf;kQA+fLkkP6ZPdgAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADwj1woAAAAsL09TQy9Cb3VuZGluZ0Jv&cr;&lf;eFNpemUAAAAALGZmZgAAAAA/lMzNP/EP+T8Nq58AAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAA&cr;&lf;AAfLdwAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0Nl&cr;&lf;bnRlcgAsZmZmAAAAAD5+kQA+fLkkP6ZPdgAAABgvT1NDL1ZlbG9jaXR5AAAALGYAAAAAAAAAAAAs&cr;&lf;L09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/lMzNP/EP+T8ABo4AAAAcL09TQy9GcmFt&cr;&lf;ZU51bWJlcgAAAAAsaQAAAAfLeAAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAA&cr;&lf;AAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD59pRI+f+XJP6XztgAAABgvT1NDL1ZlbG9jaXR5&cr;&lf;AAAALGYAADuM5wQAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/lMzNP/EP+T7o&cr;&lf;f8wAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLeQAAABQvT1NDL1RpbWVzdGFtcAAALAAA&cr;&lf;AAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD56xxE+fDYRP6UeuAAA&cr;&lf;ABgvT1NDL1ZlbG9jaXR5AAAALGYAADwBbwAAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZm&cr;&lf;ZgAAAAA/lMzNP/EP+T7UlRgAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLegAAABQvT1ND&cr;&lf;L1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAA&cr;&lf;AD5wOvs+e+dtP6L7fwAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADygkC4AAAAsL09TQy9Cb3VuZGlu&cr;&lf;Z0JveFNpemUAAAAALGZmZgAAAAA/lMzNP/EP+T7EGJMAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAs&cr;&lf;aQAAAAfLewAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1ND&cr;&lf;L0NlbnRlcgAsZmZmAAAAAD5wOvs+e+dtP6L7fwAAABgvT1NDL1ZlbG9jaXR5AAAALGYAAAAAAAAA&cr;&lf;AAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/lAGjP/EP+T62lEYAAAAcL09TQy9G&cr;&lf;cmFtZU51bWJlcgAAAAAsaQAAAAfLfAAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAA&cr;&lf;AAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD5nhsI+c2ehP6GgJwAAABgvT1NDL1ZlbG9j&cr;&lf;aXR5AAAALGYAADyDEm8AAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/kmgKP/EP&cr;&lf;+T6ruYwAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLfQAAABQvT1NDL1RpbWVzdGFtcAAA&cr;&lf;LAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD5gxJw+b+xXP6Ct&cr;&lf;rAAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADwqZMMAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAA&cr;&lf;LGZmZgAAAAA/kmgKP/EP+T6i+DgAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLfgAAABQv&cr;&lf;T1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZm&cr;&lf;AAAAAD5fVZs+awIMP59IgAAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADxGPxQAAAAsL09TQy9Cb3Vu&cr;&lf;ZGluZ0JveFNpemUAAAAALGZmZgAAAAA/jmZmP/EP+T6cAaMAAAAcL09TQy9GcmFtZU51bWJlcgAA&cr;&lf;AAAsaQAAAAfLfwAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAv&cr;&lf;T1NDL0NlbnRlcgAsZmZmAAAAAD5fVZs+awIMP59IgAAAABgvT1NDL1ZlbG9jaXR5AAAALGYAAAAA&cr;&lf;AAAAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/jmZmP/EP+T6WhysAAAAcL09T&cr;&lf;Qy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLgAAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRs&cr;&lf;ZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD5YXwc+ZPdmP50yYQAAABgvT1NDL1Zl&cr;&lf;bG9jaXR5AAAALGYAADyYXwcAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/izMz&cr;&lf;P/EP+T6SOioAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLgQAAABQvT1NDL1RpbWVzdGFt&cr;&lf;cAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD5N0vI+VgQZ&cr;&lf;P5oZZQAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADz1wo8AAAAsL09TQy9Cb3VuZGluZ0JveFNpemUA&cr;&lf;AAAALGZmZgAAAAA/izMzP/EP+T6O2RcAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLggAA&cr;&lf;ABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAs&cr;&lf;ZmZmAAAAAD5Hk94+SOinP5itrAAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADyTdLwAAAAsL09TQy9C&cr;&lf;b3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/iM5wP/EP+T6Rj8UAAAAcL09TQy9GcmFtZU51bWJl&cr;&lf;cgAAAAAsaQAAAAfLgwAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAA&cr;&lf;ACAvT1NDL0NlbnRlcgAsZmZmAAAAAD5Hk94+SOinP5itrAAAABgvT1NDL1ZlbG9jaXR5AAAALGYA&cr;&lf;AAAAAAAAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/izMzP/EP+T6bi6wAAAAc&cr;&lf;L09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLhAAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1&cr;&lf;bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD4+kQA+QIMSP5LhSAAAABgvT1ND&cr;&lf;L1ZlbG9jaXR5AAAALGYAAD1AGjcAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/&cr;&lf;kZmaP/EP+T6otDkAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLhQAAABQvT1NDL1RpbWVz&cr;&lf;dGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD41wo8+&cr;&lf;OSOjP5B5PgAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADyyleoAAAAsL09TQy9Cb3VuZGluZ0JveFNp&cr;&lf;emUAAAAALGZmZgAAAAA/kZmaP/EP+T62oWIAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfL&cr;&lf;hgAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRl&cr;&lf;cgAsZmZmAAAAAD4vNNc+LwBpP42ETQAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADzULD0AAAAsL09T&cr;&lf;Qy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/lzGQP/EP+T7D8UEAAAAcL09TQy9GcmFtZU51&cr;&lf;bWJlcgAAAAAsaQAAAAfLhwAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAA&cr;&lf;AQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD4vNNc+LwBpP42ETQAAABgvT1NDL1ZlbG9jaXR5AAAA&cr;&lf;LGYAAAAAAAAAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/mAAAP/EP+T7P7FcA&cr;&lf;AAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLiAAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoN&cr;&lf;I2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD4fIS0+IwVTP4mPxQAAABgv&cr;&lf;T1NDL1ZlbG9jaXR5AAAALGYAAD0V6eIAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAA&cr;&lf;AAA/nmZmP/EP+T7aXjUAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLiQAAABQvT1NDL1Rp&cr;&lf;bWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD4P&cr;&lf;XCk+GPxQP4Rj8QAAABgvT1NDL1ZlbG9jaXR5AAAALGYAAD013MYAAAAsL09TQy9Cb3VuZGluZ0Jv&cr;&lf;eFNpemUAAAAALGZmZgAAAAA/nmZmP/EP+T7jLKUAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAA&cr;&lf;AAfLigAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0Nl&cr;&lf;bnRlcgAsZmZmAAAAAD39Vm0+B/y5P30OVgAAABgvT1NDL1ZlbG9jaXR5AAAALGYAAD1SiM4AAAAs&cr;&lf;L09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/mAAAP/EP+T7lOO8AAAAcL09TQy9GcmFt&cr;&lf;ZU51bWJlcgAAAAAsaQAAAAfLiwAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAA&cr;&lf;AAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD39Vm0+B/y5P30OVgAAABgvT1NDL1ZlbG9jaXR5&cr;&lf;AAAALGYAAAAAAAAAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/nmZmP/EP+T7f&cr;&lf;IS0AAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLjAAAABQvT1NDL1RpbWVzdGFtcAAALAAA&cr;&lf;AAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD3txdY+AqmTP3eT3gAA&cr;&lf;ABgvT1NDL1ZlbG9jaXR5AAAALGYAADy+De0AAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZm&cr;&lf;ZgAAAAA/nmZmP/EP+T7VJUYAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLjQAAABQvT1ND&cr;&lf;L1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAA&cr;&lf;AD3lYEI96a1DP3LkjwAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADy9PDYAAAAsL09TQy9Cb3VuZGlu&cr;&lf;Z0JveFNpemUAAAAALGZmZgAAAAA/nmZmP/EP+T7J4bEAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAs&cr;&lf;aQAAAAfLjgAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1ND&cr;&lf;L0NlbnRlcgAsZmZmAAAAAD3dl/Y93MY/P26+4AAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADyR0U4A&cr;&lf;AAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/pAGjP/EP+T6+qzYAAAAcL09TQy9G&cr;&lf;cmFtZU51bWJlcgAAAAAsaQAAAAfLjwAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAA&cr;&lf;AAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD3dl/Y93MY/P26+4AAAABgvT1NDL1ZlbG9j&cr;&lf;aXR5AAAALGYAAAAAAAAAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/pMzNP/EP&cr;&lf;+T65wOwAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLkAAAABQvT1NDL1RpbWVzdGFtcAAA&cr;&lf;LAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD3RGc491c+rP2qf&cr;&lf;vgAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADyQLeAAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAA&cr;&lf;LGZmZgAAAAA/tZf2P/EP+T7CM5wAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLkQAAABQv&cr;&lf;T1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZm&cr;&lf;AAAAAD3CWu49zC+DP2dl/gAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADx5CWwAAAAsL09TQy9Cb3Vu&cr;&lf;ZGluZ0JveFNpemUAAAAALGZmZgAAAAA/tZf2P/EP+T7Vc+sAAAAcL09TQy9GcmFtZU51bWJlcgAA&cr;&lf;AAAsaQAAAAfLkgAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAv&cr;&lf;T1NDL0NlbnRlcgAsZmZmAAAAAD2v7Fc9wyylP2QLeAAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADyH&cr;&lf;KwIAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/xAGjP/EP+T7iWu4AAAAcL09T&cr;&lf;Qy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLkwAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRs&cr;&lf;ZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD2v7Fc9wyylP2QLeAAAABgvT1NDL1Zl&cr;&lf;bG9jaXR5AAAALGYAAAAAAAAAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/xAGj&cr;&lf;P/VWbT7iJoEAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLlAAAABQvT1NDL1RpbWVzdGFt&cr;&lf;cAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD2fVZs9vAGj&cr;&lf;P2AnUgAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADyQLeAAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUA&cr;&lf;AAAALGZmZgAAAAA/yZmaP/EP+T7bFbUAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLlQAA&cr;&lf;ABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAs&cr;&lf;ZmZmAAAAAD2PXCk9xGc4P1xdZAAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADyM5wQAAAAsL09TQy9C&cr;&lf;b3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/yZmaP/EP+T7WOIYAAAAcL09TQy9GcmFtZU51bWJl&cr;&lf;cgAAAAAsaQAAAAfLlgAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAA&cr;&lf;ACAvT1NDL0NlbnRlcgAsZmZmAAAAAD1vNNc9yYXwP1inHgAAABgvT1NDL1ZlbG9jaXR5AAAALGYA&cr;&lf;ADyaAnUAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/yM5wP/iJoD7XS8cAAAAc&cr;&lf;L09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLlwAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1&cr;&lf;bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD1vNNc9yYXwP1inHgAAABgvT1ND&cr;&lf;L1ZlbG9jaXR5AAAALGYAAAAAAAAAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/&cr;&lf;xAGjP/EP+T7bcXYAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLmAAAABQvT1NDL1RpbWVz&cr;&lf;dGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD1aufU9&cr;&lf;yH/MP1hLXgAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADuqZMMAAAAsL09TQy9Cb3VuZGluZ0JveFNp&cr;&lf;emUAAAAALGZmZgAAAAA/xMzNP/EP+T7g3tMAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfL&cr;&lf;mQAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRl&cr;&lf;cgAsZmZmAAAAAD08AaM9ztkXP1eANAAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADwOinIAAAAsL09T&cr;&lf;Qy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/xMzNP/EP+T7mmtQAAAAcL09TQy9GcmFtZU51&cr;&lf;bWJlcgAAAAAsaQAAAAfLmgAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAA&cr;&lf;AQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD0tQsQ90LDyP1dFOQAAABgvT1NDL1ZlbG9jaXR5AAAA&cr;&lf;LGYAADt5CWwAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/xMzNP/EP+T7sFU0A&cr;&lf;AAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLmwAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoN&cr;&lf;I2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD0bpeM91TJhP1an8AAAABgv&cr;&lf;T1NDL1ZlbG9jaXR5AAAALGYAADuw8nwAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAA&cr;&lf;AAA/xMzNP/EP+T7w/5cAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLnAAAABQvT1NDL1Rp&cr;&lf;bWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAAD0H&cr;&lf;k9490HyFP1SVGAAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADwe7MAAAAAsL09TQy9Cb3VuZGluZ0Jv&cr;&lf;eFNpemUAAAAALGZmZgAAAAA/wzMzP/EP+T71P30AAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAA&cr;&lf;AAfLnQAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0Nl&cr;&lf;bnRlcgAsZmZmAAAAADzcXWQ9xj8UP1HX3AAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADxZ6D4AAAAs&cr;&lf;L09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/vmZmP/EP+T744hkAAAAcL09TQy9GcmFt&cr;&lf;ZU51bWJlcgAAAAAsaQAAAAfLngAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAA&cr;&lf;AAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAADzcXWQ9xj8UP1HX3AAAABgvT1NDL1ZlbG9jaXR5&cr;&lf;AAAALGYAAAAAAAAAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/vmZmP/EP+T77&cr;&lf;2lEAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLnwAAABQvT1NDL1RpbWVzdGFtcAAALAAA&cr;&lf;AAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAADy7mMg9w5WBP1Cj1wAA&cr;&lf;ABgvT1NDL1ZlbG9jaXR5AAAALGYAADvOcDsAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZm&cr;&lf;ZgAAAAA/vmZmP/EP+T7+QlsAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLoAAAABQvT1ND&cr;&lf;L1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAA&cr;&lf;ADytq589w2ETP1AgxQAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADsqZMMAAAAsL09TQy9Cb3VuZGlu&cr;&lf;Z0JveFNpemUAAAAALGZmZgAAAAA/vmZmP/EP+T8AGjcAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAs&cr;&lf;aQAAAAfLoQAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1ND&cr;&lf;L0NlbnRlcgAsZmZmAAAAADyXjVA9zJhfP06xxAAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADv8UEgA&cr;&lf;AAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/vmZmP/EP+T8A3tMAAAAcL09TQy9G&cr;&lf;cmFtZU51bWJlcgAAAAAsaQAAAAfLogAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAA&cr;&lf;AAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAADyXjVA9zJhfP06xxAAAABgvT1NDL1ZlbG9j&cr;&lf;aXR5AAAALGYAAAAAAAAAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/vmZmP/EP&cr;&lf;+T8BfBwAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLowAAABQvT1NDL1RpbWVzdGFtcAAA&cr;&lf;LAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAADyBbwA9801qP0ye&cr;&lf;7QAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADypkwwAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAA&cr;&lf;LGZmZgAAAAA/vmZmP/EP+T8B+KEAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLpAAAABQv&cr;&lf;T1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZm&cr;&lf;AAAAADxr7fo9+36RP0zGPwAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADuM5wQAAAAsL09TQy9Cb3Vu&cr;&lf;ZGluZ0JveFNpemUAAAAALGZmZgAAAAA/vmZmP/EP+T8CWu4AAAAcL09TQy9GcmFtZU51bWJlcgAA&cr;&lf;AAAsaQAAAAfLpQAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAv&cr;&lf;T1NDL0NlbnRlcgAsZmZmAAAAADxZ6D49+dsjP0xQSAAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADsQ&cr;&lf;LeAAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/vmZmP/EP+T8CowUAAAAcL09T&cr;&lf;Qy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLpgAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRs&cr;&lf;ZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAADxZ6D49+dsjP0xQSAAAABgvT1NDL1Zl&cr;&lf;bG9jaXR5AAAALGYAAAAAAAAAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/vmZm&cr;&lf;P/EP+T8C3gEAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLpwAAABQvT1NDL1RpbWVzdGFt&cr;&lf;cAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAADxC+Dg+BxDL&cr;&lf;P0mZmgAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADxvNNcAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUA&cr;&lf;AAAALGZmZgAAAAA/xMzNP/EP+T8DC+EAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLqAAA&cr;&lf;ABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAs&cr;&lf;ZmZmAAAAADxvNNc+DLKWP0gW8AAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADwLQ5YAAAAsL09TQy9C&cr;&lf;b3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/xMzNP/EP+T8DLKUAAAAcL09TQy9GcmFtZU51bWJl&cr;&lf;cgAAAAAsaQAAAAfLqQAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAA&cr;&lf;ACAvT1NDL0NlbnRlcgAsZmZmAAAAADxZ6D4+EvGqP0cQywAAABgvT1NDL1ZlbG9jaXR5AAAALGYA&cr;&lf;ADvye7MAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/xMzNP/EP+T8DRtwAAAAc&cr;&lf;L09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLqgAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1&cr;&lf;bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAADwowVU+EwvhP0VTJgAAABgvT1ND&cr;&lf;L1ZlbG9jaXR5AAAALGYAADvye7MAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/&cr;&lf;xMzNP/EP+T8DWoYAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLqwAAABQvT1NDL1RpbWVz&cr;&lf;dGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAADwowVU+&cr;&lf;EwvhP0VTJgAAABgvT1NDL1ZlbG9jaXR5AAAALGYAAAAAAAAAAAAsL09TQy9Cb3VuZGluZ0JveFNp&cr;&lf;emUAAAAALGZmZgAAAAA/xMzNP/EP+T8DZ6EAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfL&cr;&lf;rAAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRl&cr;&lf;cgAsZmZmAAAAADwBbwA+E6kqP0QE6gAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADu6xxEAAAAsL09T&cr;&lf;Qy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/xMzNP/EP+T8DdLwAAAAcL09TQy9GcmFtZU51&cr;&lf;bWJlcgAAAAAsaQAAAAfLrQAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAA&cr;&lf;AQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAADutq58+CqZMP0J7swAAABgvT1NDL1ZlbG9jaXR5AAAA&cr;&lf;LGYAADwyleoAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/xMzNP/EP+T8De0oA&cr;&lf;AAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLrgAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoN&cr;&lf;I2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAADvopx4+BYeUP0LrHAAAABgv&cr;&lf;T1NDL1ZlbG9jaXR5AAAALGYAADu0OVgAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAA&cr;&lf;AAA/xMzNP/EP+T8DgdgAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLrwAAABQvT1NDL1Rp&cr;&lf;bWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAADvR&cr;&lf;txc+BE0BP0J1JQAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADsWu5kAAAAsL09TQy9Cb3VuZGluZ0Jv&cr;&lf;eFNpemUAAAAALGZmZgAAAAA/xMzNP/EP+T8DiGYAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAA&cr;&lf;AAfLsAAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAAAAAAAQAAACAvT1NDL0Nl&cr;&lf;bnRlcgAsZmZmAAAAADu+De0+BLXdP0KjBQAAABgvT1NDL1ZlbG9jaXR5AAAALGYAADpr7foAAAAs&cr;&lf;L09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/xMzNP/EP+T8DiGYAAAAcL09TQy9GcmFt&cr;&lf;ZU51bWJlcgAAAAAsaQAAAAfLsQAAABQvT1NDL1RpbWVzdGFtcAAALAAAAAoNI2J1bmRsZQAAAAAA&cr;&lf;AAAAAQAAACAvT1NDL0NlbnRlcgAsZmZmAAAAADu0OVg+BJumP0MmGAAAABgvT1NDL1ZlbG9jaXR5&cr;&lf;AAAALGYAADsJoCcAAAAsL09TQy9Cb3VuZGluZ0JveFNpemUAAAAALGZmZgAAAAA/xMzNP/EP+T8D&cr;&lf;jvMAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAfLsgAAABQvT1NDL1RpbWVzdGFtcAAALAAA&cr;&lf;AAoN|" encoded="1">
+   </PIN>
+   <PIN pinname="Intersperse" slicecount="1" values="NewLineAutoDetection">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Former Index" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="GetSlice (Node)" nodename="GetSlice (Node)" componentmode="Hidden" id="178">
+   <BOUNDS type="Node" left="8610" top="13800" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Node" visible="1">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   <PIN pinname="Index" slicecount="1" visible="1" values="39">
+   </PIN>
+   </NODE>
+   <NODE systemname="VideoOut (DShow9)" nodename="VideoOut (DShow9)" componentmode="Hidden" id="186">
+   <BOUNDS type="Node" left="13590" top="14250" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Video" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE systemname="FrameDelay (Animation)" nodename="FrameDelay (Animation)" componentmode="Hidden" id="187">
+   <BOUNDS type="Node" left="13695" top="13245" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="4.9833334">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="FrameCounter (Animation)" nodename="FrameCounter (Animation)" componentmode="Hidden" id="188">
+   <BOUNDS type="Node" left="9435" top="14520" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Enable" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Reset" visible="1">
+   </PIN>
+   <PIN pinname="Frame Count" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="189" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="13770" top="10905" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="13770" top="10905" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="188" srcpinname="Frame Count" dstnodeid="178" dstpinname="Index">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="192" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="10290" top="10875" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="10290" top="10875" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="PLAY">
+   </PIN>
+   </NODE>
+   <NODE systemname="TogEdge (Animation)" nodename="TogEdge (Animation)" componentmode="Hidden" id="193">
+   <BOUNDS type="Node" left="13020" top="11235" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Up Edge" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="192" srcpinname="Y Output Value" dstnodeid="193" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="193" srcpinname="Up Edge" dstnodeid="189" dstpinname="Y Input Value">
+   </LINK>
+   <NODE systemname="OSCDecoder (Network)" nodename="OSCDecoder (Network)" componentmode="Hidden" id="194">
+   <BOUNDS type="Node" left="6705" top="14220" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Address" slicecount="1" values="/OSC/Center">
+   </PIN>
+   <PIN pinname="Match Rule" slicecount="1" values="First">
+   </PIN>
+   <PIN pinname="Arguments" visible="1">
+   </PIN>
+   <PIN pinname="OnReceive" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="178" srcpinname="Output Node" dstnodeid="194" dstpinname="Input">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="195" systemname="IOBox (String)">
+   <BOUNDS type="Box" left="5970" top="14985" width="1335" height="510">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5970" top="14985" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   <PIN pinname="Input String" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="192" srcpinname="Y Output Value" dstnodeid="188" dstpinname="Enable">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="196" systemname="IOBox (String)">
+   <BOUNDS type="Box" left="14535" top="11595" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="14535" top="11595" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="file.avi">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="|All Streams (*.aif, *.avi, *.avs, *.mid, *.mka, *.mkv, *.mov, *.mpg, *.ogg, *.rm, *.wmv, *.mp3, *.wav, *.wma)||*.aif;*.aiff;*.avi;*.avs;*.mov;*.mpg;*.mka;*.mkv;*.mpeg;*.ogg;*.rm;*.wmv;*.mid;*.wma;*.mp3;*.wav||AVI (*.avi)||*.avi||AviSynth (*.avs)||*.avs||Quicktime (*.mov, *.aif)||*.mov;*.aif;*.aiff||Ogg Media (*.ogg)||*.ogg||Matroska (*.mka, *.mkv)||*.mka;*.mkv||RealMedia (*.rm)||*.rm||WindowsMedia (*.wmv, *.wma)||*.wmv;*.wma||MIDI (*.mid)||*.mid||MPEG (*.mpg, *.mpeg)||*.mpg;*.mpeg||MP3 (*.mp3)||*.mp3||Wave (*.wav)||*.wav|">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="Filename">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="137" srcpinname="OSCMessage" dstnodeid="172" dstpinname="Input Data" linkstyle="PolyLine">
+   </LINK>
+   <NODE id="182" systemname="FileStream (DShow9)" filename="" nodename="FileStream (DShow9)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
+   <PIN pinname="Speed" slicecount="1" pintype="Input" visible="1" values="0.5">
+   </PIN>
+   <PIN pinname="Filename" visible="1" pintype="Input">
+   </PIN>
+   <PIN pinname="Loop" slicecount="1" pintype="Input" visible="1" values="1">
+   </PIN>
+   <BOUNDS type="Node" left="13155" top="12660" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Do Seek" pintype="Input" visible="1">
+   </PIN>
+   <PIN pinname="Play" pintype="Input" visible="1">
+   </PIN>
+   <PIN pinname="Loop End Time" visible="1" pintype="Input">
+   </PIN>
+   <PIN pinname="Duration" visible="1" pintype="Output">
+   </PIN>
+   <PIN pinname="Video" visible="1" pintype="Output">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" pintype="Configuration" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Expose Graph to ROT" pintype="Configuration" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Reference Clock" pintype="Configuration" slicecount="1" values="Default">
+   </PIN>
+   <PIN pinname="Loop Start Time" pintype="Input" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Seek Time" pintype="Input" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Adjust System Time" pintype="Input" visible="-1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Audio" pintype="Output" visible="1">
+   </PIN>
+   <PIN pinname="Midi" pintype="Output" visible="1">
+   </PIN>
+   <PIN pinname="Position" pintype="Output" visible="1">
+   </PIN>
+   <PIN pinname="Seeking Capabilities" pintype="Output" visible="1">
+   </PIN>
+   <PIN pinname="Bytes to Read" pintype="Output" visible="1">
+   </PIN>
+   <PIN pinname="ID" pintype="Output" visible="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="12" srcpinname="Output" dstnodeid="182" dstpinname="Filename">
+   </LINK>
+   <LINK srcnodeid="192" srcpinname="Y Output Value" dstnodeid="182" dstpinname="Play">
+   </LINK>
+   <LINK srcnodeid="189" srcpinname="Y Output Value" dstnodeid="182" dstpinname="Do Seek">
+   </LINK>
+   <LINK srcnodeid="187" srcpinname="Output 1" dstnodeid="182" dstpinname="Loop End Time" linkstyle="Bezier">
+   <LINKPOINT x="15375" y="14970">
+   </LINKPOINT>
+   <LINKPOINT x="15390" y="11565">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="182" srcpinname="Duration" dstnodeid="187" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="182" srcpinname="Video" dstnodeid="186" dstpinname="Video">
+   </LINK>
+   <NODE systemname="Length (Raw)" nodename="Length (Raw)" componentmode="Hidden" id="197">
+   <BOUNDS type="Node" left="8610" top="15525" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="178" srcpinname="Output Node" dstnodeid="197" dstpinname="Input">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="198" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="8655" top="16260" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="8655" top="16260" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="197" srcpinname="Count" dstnodeid="198" dstpinname="Y Input Value">
+   </LINK>
+   <NODE systemname="EQ (Value)" nodename="EQ (Value)" componentmode="Hidden" id="199">
+   <BOUNDS type="Node" left="10635" top="13785" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="4.9833334">
+   </PIN>
+   <PIN pinname="Input 2" visible="1" slicecount="1" values="3.9635">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Epsilon" slicecount="1" values="0.02">
+   </PIN>
+   </NODE>
+   <NODE systemname="OR (Boolean)" nodename="OR (Boolean)" componentmode="Hidden" id="200">
+   <BOUNDS type="Node" left="10170" top="13950" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="193" srcpinname="Up Edge" dstnodeid="200" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="200" srcpinname="Output" dstnodeid="188" dstpinname="Reset">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="201" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="9435" top="15180" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="9435" top="15180" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="188" srcpinname="Frame Count" dstnodeid="201" dstpinname="Y Input Value">
+   </LINK>
+   <NODE systemname="Count (Value)" nodename="Count (Value)" componentmode="Hidden" id="202">
+   <BOUNDS type="Node" left="9450" top="13065" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Count" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="176" srcpinname="Former Index" dstnodeid="202" dstpinname="Input">
+   </LINK>
+   <NODE systemname="FrameDelay (Animation)" nodename="FrameDelay (Animation)" componentmode="Hidden" id="203">
+   <BOUNDS type="Node" left="10530" top="14970" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="188" srcpinname="Frame Count" dstnodeid="203" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="203" srcpinname="Output 1" dstnodeid="199" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="202" srcpinname="Count" dstnodeid="199" dstpinname="Input 2">
+   </LINK>
+   <NODE systemname="TogEdge (Animation)" nodename="TogEdge (Animation)" componentmode="Hidden" id="204">
+   <BOUNDS type="Node" left="10785" top="14250" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Up Edge" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="199" srcpinname="Output" dstnodeid="204" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="204" srcpinname="Up Edge" dstnodeid="200" dstpinname="Input 2">
+   </LINK>
+   <NODE systemname="AsString (Raw)" nodename="AsString (Raw)" componentmode="Hidden" id="205">
+   <BOUNDS type="Node" left="7455" top="15285" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="178" srcpinname="Output Node" dstnodeid="205" dstpinname="Input">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="206" systemname="IOBox (String)">
+   <BOUNDS type="Box" left="4965" top="15900" width="3300" height="870">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4965" top="15900" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   <PIN pinname="Input String" visible="1" slicecount="1" values="|I2J1bmRsZQEgL09TQy9DZW50ZXIsZmZmvLKV6rvbi6w/einHGC9PU0MvVmVsb2NpdHksZiwvT1ND&cr;&lf;L0JvdW5kaW5nQm94U2l6ZSxmZmY/qzMzP/EP+T+DlYEcL09TQy9GcmFtZU51bWJlcixpNm8UL09T&cr;&lf;Qy9UaW1lc3RhbXAsAIEAAAAcL09TQy9GcmFtZU51bWJlcgAAAAAsaQAAAAA2bgAAABQvT1NDL1Rp&cr;&lf;bWVzdGFtcAAALAAAAA==|" encoded="1">
+   </PIN>
+   </NODE>
+   <NODE id="173" systemname="Add (String)" nodename="Add (String)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
+   <BOUNDS type="Node" left="5070" top="11175" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1" pintype="Output">
+   </PIN>
+   <PIN pinname="Input 2" slicecount="1" pintype="Input" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Intersperse" slicecount="1" pintype="Input" visible="1" values="CarriageReturnLineFeed">
+   </PIN>
+   <PIN pinname="Input 1" visible="1" pintype="Input">
+   </PIN>
+   <PIN pinname="Descriptive Name" pintype="Configuration" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Input Count" pintype="Configuration" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="" pintype="Input" slicecount="1" values="text">
+   </PIN>
+   <PIN pinname="Intersperse String" pintype="Input" visible="0" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="ID" pintype="Output" visible="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="173" srcpinname="Output" dstnodeid="174" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="172" srcpinname="Output String" dstnodeid="173" dstpinname="Input 1">
+   </LINK>
+   <NODE systemname="+ (Raw)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="+ (Raw)" componentmode="Hidden" id="208">
+   <BOUNDS type="Node" left="9570" top="10485" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="137" srcpinname="OSCMessage" dstnodeid="208" dstpinname="Input 1">
+   </LINK>
+   <NODE systemname="AsRaw (Value)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="AsRaw (Value)" componentmode="Hidden" id="209">
+   <BOUNDS type="Node" left="9930" top="10155" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Format" slicecount="1" values="Byte">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="209" srcpinname="Output" dstnodeid="208" dstpinname="Input 2">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="210" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="10725" top="9720" width="285" height="405">
+   </BOUNDS>
+   <BOUNDS type="Node" left="10725" top="9720" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="2" values="10,13">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="|0, 0|">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="210" srcpinname="Y Output Value" dstnodeid="209" dstpinname="Input" linkstyle="PolyLine">
+   </LINK>
+   <LINK srcnodeid="208" srcpinname="Output" dstnodeid="106" dstpinname="Content">
+   </LINK>
+   <NODE systemname="AsRaw (String)" nodename="AsRaw (String)" componentmode="Hidden" id="211">
+   <BOUNDS type="Node" left="7830" top="13290" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Encoding" slicecount="1" values="|System Default|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="176" srcpinname="Output" dstnodeid="211" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="211" srcpinname="Output" dstnodeid="178" dstpinname="Input Node">
+   </LINK>
+   <NODE id="175" systemname="Reader (Raw)" filename="" nodename="Reader (Raw)" componentmode="Hidden">
+   <PIN pinname="Read" slicecount="1" values="0">
+   </PIN>
+   <BOUNDS type="Node" left="8985" top="11580" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Filename" visible="1">
+   </PIN>
+   <PIN pinname="Content" visible="1">
+   </PIN>
+   <PIN pinname="Encoding">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="16" srcpinname="Output" dstnodeid="175" dstpinname="Filename">
+   </LINK>
+   <NODE systemname="AsString (Raw)" nodename="AsString (Raw)" componentmode="Hidden" id="212">
+   <BOUNDS type="Node" left="8130" top="12180" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="212" srcpinname="Output" dstnodeid="176" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="205" srcpinname="Output" dstnodeid="206" dstpinname="Input String">
+   </LINK>
+   <NODE systemname="S+H (String)" nodename="S+H (String)" componentmode="Hidden" id="213">
+   <BOUNDS type="Node" left="6855" top="14580" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Set" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="194" srcpinname="Arguments" dstnodeid="213" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="194" srcpinname="OnReceive" dstnodeid="213" dstpinname="Set">
+   </LINK>
+   <LINK srcnodeid="213" srcpinname="Output" dstnodeid="195" dstpinname="Input String">
+   </LINK>
+   <LINK srcnodeid="161" srcpinname="OSCMessage" dstnodeid="212" dstpinname="Input">
    </LINK>
    </PATCH>
