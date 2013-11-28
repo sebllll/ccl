@@ -312,7 +312,7 @@
    <PIN pinname="Input Node" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <NODE systemname="Sensor" filename="Sensor.v4p" nodename="Sensor.v4p" componentmode="InAWindow" id="0">
+   <NODE systemname="Sensor" filename="Sensor.v4p" nodename="Sensor.v4p" componentmode="Hidden" id="0">
    <BOUNDS type="Node" left="690" top="1590" width="8085" height="270">
    </BOUNDS>
    <PIN pinname="Depth" visible="1">
@@ -687,5 +687,15 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="49" srcpinname="Y Output Value" dstnodeid="56" dstpinname="Y Input Value">
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="58" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="4560" top="2100" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4560" top="2100" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="UserTexture">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="UserTexture" dstnodeid="58" dstpinname="Input Node">
    </LINK>
    </PATCH>

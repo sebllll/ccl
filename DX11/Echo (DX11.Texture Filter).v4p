@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta31.2.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv-addons\Effects\Echo (DX11)\Echo (DX11.Texture Filter).v4p" systemname="Echo (DX11.Texture Filter)" filename="C:\vvvv\vvvv-addons\Effects\Echo (DX11)\Echo (DX11.Texture Filter).v4p">
+   <PATCH nodename="D:\vvvv\Application\v2\DX11\Echo (DX11.Texture Filter).v4p" systemname="Echo (DX11.Texture Filter)" filename="C:\vvvv\vvvv-addons\Effects\Echo (DX11)\Echo (DX11.Texture Filter).v4p">
    <BOUNDS height="11160" left="4710" top="3255" type="Window" width="8730">
    </BOUNDS>
    <NODE componentmode="InABox" id="32" nodename="IOBox (Node)" systemname="IOBox (Node)">
@@ -258,16 +258,6 @@
    <PIN pinname="XY" visible="1">
    </PIN>
    </NODE>
-   <NODE systemname="FrameDelay (DX11.Texture 2d)" nodename="FrameDelay (DX11.Texture 2d)" componentmode="Hidden" id="62" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll">
-   <BOUNDS type="Node" left="2655" top="7320" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Texture Out" visible="1">
-   </PIN>
-   <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Flush" slicecount="1" visible="1" values="0">
-   </PIN>
-   </NODE>
    <NODE systemname="Switch (Node Input)" nodename="Switch (Node Input)" componentmode="Hidden" id="63">
    <BOUNDS type="Node" left="330" top="7995" width="555" height="270">
    </BOUNDS>
@@ -294,8 +284,6 @@
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="64" srcpinname="Output" dstnodeid="62" dstpinname="Texture In" hiddenwhenlocked="0">
-   </LINK>
    <LINK srcnodeid="32" srcpinname="Output Node" dstnodeid="64" dstpinname="Input 2" linkstyle="Bezier" hiddenwhenlocked="1">
    <LINKPOINT x="625" y="4043">
    </LINKPOINT>
@@ -355,13 +343,15 @@
    </PIN>
    <PIN pinname="Generate Mip Maps" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Mip Map Levels" slicecount="1" values="10">
+   <PIN pinname="Mip Map Levels" slicecount="1" values="8">
    </PIN>
    <PIN pinname="Clear" slicecount="1" values="1">
    </PIN>
    <PIN pinname="Clear Depth" slicecount="1" values="1">
    </PIN>
    <PIN pinname="Texture ScaleXY" slicecount="2" values="1,1">
+   </PIN>
+   <PIN pinname="Buffers" visible="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="60" srcpinname="XY" dstnodeid="69" dstpinname="Texture SizeXY" hiddenwhenlocked="1">
@@ -394,12 +384,10 @@
    </NODE>
    <LINK srcnodeid="50" srcpinname="Layer Out" dstnodeid="69" dstpinname="Layer">
    </LINK>
-   <LINK srcnodeid="33" srcpinname="Y Output Value" dstnodeid="62" dstpinname="Flush">
-   </LINK>
    <NODE id="73" systemname="Info (DX11.Texture 2d)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Info (DX11.Texture 2d)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
    <BOUNDS type="Node" left="2625" top="8745" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Texture In" visible="1" pintype="Input">
+   <PIN pinname="Texture In" visible="1" pintype="Input" slicecount="1" values="||">
    </PIN>
    <BOUNDS type="Box" left="0" top="0" width="2400" height="1800">
    </BOUNDS>
@@ -428,8 +416,6 @@
    <PIN pinname="ID" pintype="Output" visible="-1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="62" srcpinname="Texture Out" dstnodeid="73" dstpinname="Texture In">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="74" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="2520" top="9360" width="795" height="240">
    </BOUNDS>
@@ -487,7 +473,7 @@
    </PIN>
    <PIN pinname="Layer" visible="1">
    </PIN>
-   <PIN pinname="Texture" visible="1">
+   <PIN pinname="Texture" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Render State" visible="1">
    </PIN>
@@ -495,12 +481,6 @@
    <LINK srcnodeid="4" srcpinname="Output" dstnodeid="49" dstpinname="Color">
    </LINK>
    <LINK srcnodeid="47" srcpinname="Geometry Out" dstnodeid="49" dstpinname="Geometry">
-   </LINK>
-   <LINK srcnodeid="62" srcpinname="Texture Out" dstnodeid="49" dstpinname="Texture" linkstyle="Bezier">
-   <LINKPOINT x="5505" y="9540">
-   </LINKPOINT>
-   <LINKPOINT x="6150" y="3060">
-   </LINKPOINT>
    </LINK>
    <LINK srcnodeid="49" srcpinname="Layer" dstnodeid="50" dstpinname="Layer 2">
    </LINK>
@@ -521,5 +501,23 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="75" srcpinname="Output Enum" dstnodeid="69" dstpinname="Target Format">
+   </LINK>
+   <NODE systemname="FrameDelay (DX11.Texture 2d)" nodename="FrameDelay (DX11.Texture 2d)" componentmode="Hidden" id="78" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll">
+   <BOUNDS type="Node" left="2655" top="7320" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="64" srcpinname="Output" dstnodeid="78" dstpinname="Texture In" hiddenwhenlocked="0">
+   </LINK>
+   <LINK srcnodeid="33" srcpinname="Y Output Value" dstnodeid="78" dstpinname="Flush">
+   </LINK>
+   <LINK srcnodeid="78" srcpinname="Texture Out" dstnodeid="49" dstpinname="Texture" linkstyle="Bezier">
+   <LINKPOINT x="5505" y="9540">
+   </LINKPOINT>
+   <LINKPOINT x="6150" y="3060">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="78" srcpinname="Texture Out" dstnodeid="73" dstpinname="Texture In">
    </LINK>
    </PATCH>

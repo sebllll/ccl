@@ -4,6 +4,11 @@
 
 RWStructuredBuffer<float> rwbuffer : BACKBUFFER;
 
+struct analysis {
+	
+	float Speed;
+	
+}
 
 //Texture we want to read from
 Texture2D tex <string uiname="Texture";>;

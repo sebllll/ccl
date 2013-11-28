@@ -22,7 +22,7 @@
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
-   <NODE systemname="CS_TextureEnergy" filename="CS_TextureEnergy.v4p" nodename="CS_TextureEnergy.v4p" componentmode="InAWindow" id="44">
+   <NODE systemname="CS_TextureEnergy" filename="CS_TextureEnergy.v4p" nodename="CS_TextureEnergy.v4p" componentmode="Hidden" id="44">
    <BOUNDS type="Node" left="1065" top="3855" width="100" height="100">
    </BOUNDS>
    <PIN pinname="X" visible="1">
@@ -31,7 +31,7 @@
    </PIN>
    <PIN pinname="Texture" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="SmoothedTexture" visible="1">
+   <PIN pinname="SmoothedTexture" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="EnergyOut" visible="1">
    </PIN>
@@ -88,8 +88,6 @@
    <BOUNDS type="Window" left="4395" top="2505" width="17295" height="11430">
    </BOUNDS>
    </NODE>
-   <LINK srcnodeid="82" srcpinname="SmoothedTexture" dstnodeid="44" dstpinname="SmoothedTexture">
-   </LINK>
    <LINK srcnodeid="82" srcpinname="RawTexture" dstnodeid="44" dstpinname="RawTexture">
    </LINK>
    <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="87">
@@ -485,5 +483,7 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="153" srcpinname="Y Output Value" dstnodeid="150" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="82" srcpinname="SmoothedTexture" dstnodeid="44" dstpinname="SmoothedTexture">
    </LINK>
    </PATCH>
