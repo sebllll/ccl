@@ -55,3 +55,4 @@ _ReSharper*/
 
 #media files
 *.avi
+/DATA
