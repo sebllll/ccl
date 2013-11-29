@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta31.2.dtd" >
    <PATCH nodename="D:\vvvv\Application\v2\_ROOT2.v4p" systemname="_ROOT2" filename="D:\vvvv\Application\v2\_ROOT2.v4p">
-   <BOUNDS type="Window" left="11775" top="525" width="17025" height="14610">
+   <BOUNDS type="Window" left="10830" top="570" width="17025" height="14610">
    </BOUNDS>
    <NODE systemname="MainLoop (VVVV)" nodename="MainLoop (VVVV)" componentmode="Hidden" id="-6">
    <BOUNDS type="Node" left="405" top="825" width="100" height="100">
@@ -87,7 +87,7 @@
    <NODE systemname="Skeleton" filename="subpatches\Skeleton.v4p" nodename="subpatches\Skeleton.v4p" componentmode="InAWindow" id="5">
    <BOUNDS type="Node" left="1080" top="4335" width="13635" height="270">
    </BOUNDS>
-   <BOUNDS type="Window" left="11775" top="525" width="17025" height="14610">
+   <BOUNDS type="Window" left="10830" top="570" width="17025" height="14610">
    </BOUNDS>
    <PIN pinname="Texture Out" visible="1" slicecount="1" values="||">
    </PIN>
@@ -479,7 +479,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="2460" top="5670" width="4800" height="3600">
    </BOUNDS>
-   <BOUNDS type="Window" left="11775" top="525" width="17025" height="14610">
+   <BOUNDS type="Window" left="10830" top="570" width="17025" height="14610">
    </BOUNDS>
    <PIN pinname="Texture" visible="1">
    </PIN>
@@ -494,7 +494,7 @@
    </LINK>
    <LINK srcnodeid="95" srcpinname="BoundingBox" dstnodeid="147" dstpinname="BoundingBox">
    </LINK>
-   <NODE systemname="Skeleton (OSC)" filename="OSC\Skeleton (OSC).v4p" nodename="OSC\Skeleton (OSC).v4p" componentmode="Hidden" id="157">
+   <NODE systemname="Skeleton (OSC)" filename="OSC\Skeleton (OSC).v4p" nodename="OSC\Skeleton (OSC).v4p" componentmode="InAWindow" id="157">
    <BOUNDS type="Node" left="12870" top="12405" width="2325" height="270">
    </BOUNDS>
    <BOUNDS type="Box" left="12870" top="12405" width="4885" height="6180">
@@ -1180,16 +1180,6 @@
    </LINK>
    <LINK srcnodeid="223" srcpinname="OSC" dstnodeid="258" dstpinname="OSC">
    </LINK>
-   <NODE systemname="Audio (OSC)" filename="OSC\Audio (OSC).v4p" nodename="OSC\Audio (OSC).v4p" componentmode="Hidden" id="269">
-   <BOUNDS type="Node" left="15630" top="12405" width="0" height="0">
-   </BOUNDS>
-   <BOUNDS type="Box" left="15630" top="12405" width="4575" height="6700">
-   </BOUNDS>
-   <BOUNDS type="Window" left="14940" top="5385" width="7140" height="7800">
-   </BOUNDS>
-   <PIN pinname="OSCMessage" visible="1">
-   </PIN>
-   </NODE>
    <NODE systemname="Record (OSC)" filename="OSC\Record (OSC).v4p" nodename="OSC\Record (OSC).v4p" componentmode="Hidden" id="270">
    <BOUNDS type="Node" left="15885" top="12960" width="0" height="0">
    </BOUNDS>
@@ -1197,7 +1187,7 @@
    </BOUNDS>
    <BOUNDS type="Window" left="18555" top="6345" width="9630" height="5385">
    </BOUNDS>
-   <PIN pinname="FileName" visible="1" slicecount="1" values="OSC\DATA\test4.osc.raw">
+   <PIN pinname="FileName" visible="1" slicecount="0" values="OSC\DATA\test4.osc.raw">
    </PIN>
    <PIN pinname="OSC" visible="1" slicecount="1" values="||">
    </PIN>
@@ -1227,10 +1217,6 @@
    <LINK srcnodeid="14" srcpinname="Output String" dstnodeid="271" dstpinname="Input 1">
    </LINK>
    <LINK srcnodeid="13" srcpinname="Output String" dstnodeid="271" dstpinname="Input 3">
-   </LINK>
-   <LINK srcnodeid="271" srcpinname="Output" dstnodeid="270" dstpinname="FileName">
-   </LINK>
-   <LINK srcnodeid="269" srcpinname="OSCMessage" dstnodeid="270" dstpinname="OSC" linkstyle="PolyLine">
    </LINK>
    <LINK srcnodeid="107" srcpinname="Y Output Value" dstnodeid="270" dstpinname="Write" linkstyle="Bezier">
    <LINKPOINT x="1365" y="10598">
@@ -1287,7 +1273,7 @@
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
-   <PIN pinname="Source Maximum" slicecount="1" values="0.6">
+   <PIN pinname="Source Maximum" slicecount="1" values="10">
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
@@ -1303,7 +1289,7 @@
    </PIN>
    <PIN pinname="RGB texture" visible="1" slicecount="1" values="||">
    </PIN>
-   <BOUNDS type="Window" left="11160" top="2340" width="17295" height="11235">
+   <BOUNDS type="Window" left="10830" top="570" width="17025" height="14610">
    </BOUNDS>
    </NODE>
    <LINK srcnodeid="5" srcpinname="UserTexture" dstnodeid="277" dstpinname="Player Texture">
@@ -1359,7 +1345,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="0" top="2725" width="6610" height="5125">
    </BOUNDS>
-   <BOUNDS type="Window" left="11775" top="525" width="17025" height="14610">
+   <BOUNDS type="Window" left="10830" top="570" width="17025" height="14610">
    </BOUNDS>
    <PIN pinname="depth" visible="1">
    </PIN>
@@ -1435,5 +1421,39 @@
    <LINK srcnodeid="284" srcpinname="Output" dstnodeid="137" dstpinname="BoxSize">
    </LINK>
    <LINK srcnodeid="5" srcpinname="MaskedDepth" dstnodeid="299" dstpinname="depth">
+   </LINK>
+   <NODE systemname="R (String)" nodename="R (String)" componentmode="Hidden" id="300">
+   <BOUNDS type="Node" left="16440" top="12015" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Receive String" slicecount="1" values="audio">
+   </PIN>
+   <PIN pinname="Input Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="271" srcpinname="Output" dstnodeid="270" dstpinname="FileName">
+   </LINK>
+   <NODE systemname="AsRaw (String)" nodename="AsRaw (String)" componentmode="Hidden" id="301">
+   <BOUNDS type="Node" left="16215" top="12480" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="300" srcpinname="Input Value" dstnodeid="301" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="301" srcpinname="Output" dstnodeid="270" dstpinname="OSC">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="302" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="4380" top="7200" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4380" top="7200" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="274" srcpinname="Output" dstnodeid="302" dstpinname="Y Input Value">
    </LINK>
    </PATCH>

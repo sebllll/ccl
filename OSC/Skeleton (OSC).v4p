@@ -146,4 +146,30 @@
    </NODE>
    <LINK srcnodeid="9" srcpinname="Y Output Value" dstnodeid="2" dstpinname="Spread as Bundle">
    </LINK>
+   <NODE systemname="S (Value)" nodename="S (Value)" componentmode="Hidden" id="11">
+   <BOUNDS type="Node" left="4320" top="2865" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Send String">
+   </PIN>
+   <PIN pinname="Input Value" visible="1" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="10" systemname="IOBox (String)">
+   <BOUNDS type="Box" left="4560" top="2490" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4560" top="2490" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" values="skeleton">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="devnul">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10" srcpinname="Output String" dstnodeid="11" dstpinname="Send String">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Y Output Value" dstnodeid="11" dstpinname="Input Value">
+   </LINK>
    </PATCH>

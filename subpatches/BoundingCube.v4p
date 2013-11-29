@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta31.2.dtd" >
    <PATCH nodename="D:\vvvv\Application\v2\subpatches\BoundingCube.v4p" systemname="BoundingCube" filename="D:\vvvv\Application\v2\subpatches\BoundingCube.v4p">
-   <BOUNDS type="Window" left="11775" top="525" width="17025" height="14610">
+   <BOUNDS type="Window" left="10830" top="570" width="17025" height="14610">
    </BOUNDS>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="0" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="6105" top="150" width="795" height="960">
@@ -96,16 +96,6 @@
    <PIN pinname="Z" visible="1">
    </PIN>
    <PIN pinname="XYZ" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="13" srcpinname="XYZ" dstnodeid="8" dstpinname="SizeXYZ">
-   </LINK>
-   <NODE systemname="Rasterizer (DX11.RenderState)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Rasterizer (DX11.RenderState)" componentmode="Hidden" id="15">
-   <BOUNDS type="Node" left="2475" top="6405" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Mode" slicecount="1" values="NoCullWireframe">
-   </PIN>
-   <PIN pinname="Render State" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
    <NODE systemname="Unzip (2d)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Unzip (2d)" componentmode="Hidden" id="18">
@@ -306,24 +296,142 @@
    </NODE>
    <LINK srcnodeid="35" srcpinname="Output String" dstnodeid="34" dstpinname="Send String">
    </LINK>
-   <NODE id="14" systemname="Constant (DX11.Effect)" filename="%VVVV%\packs\dx11-girlpower\nodes\dx11\Constant.fx" nodename="Constant (DX11.Effect)" componentmode="Hidden">
-   <PIN pinname="Layer" visible="1">
-   </PIN>
-   <BOUNDS type="Node" left="3540" top="7335" width="100" height="100">
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="36" systemname="IOBox (String)">
+   <BOUNDS type="Box" left="6210" top="7590" width="2730" height="285">
    </BOUNDS>
-   <PIN pinname="Geometry" visible="1">
+   <BOUNDS type="Node" left="6210" top="7590" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" values="boundingCubeCenter">
    </PIN>
-   <PIN pinname="Render State" visible="1">
+   <PIN pinname="Default" slicecount="1" values="devnul">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <NODE systemname="S (Value)" nodename="S (Value)" componentmode="Hidden" id="37">
+   <BOUNDS type="Node" left="5760" top="8010" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Value" visible="1" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="36" srcpinname="Output String" dstnodeid="37" dstpinname="Send String">
+   </LINK>
+   <LINK srcnodeid="31" srcpinname="Y Output Value" dstnodeid="37" dstpinname="Input Value">
+   </LINK>
+   <NODE systemname="Transform (Transform 3d Vector)" nodename="Transform (Transform 3d Vector)" componentmode="Hidden" id="39">
+   <BOUNDS type="Node" left="8100" top="1950" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Translate XYZ" visible="1">
+   </PIN>
+   <PIN pinname="Scale XYZ" slicecount="3" values="1,1,1">
+   </PIN>
+   </NODE>
+   <NODE systemname="R (Value)" nodename="R (Value)" componentmode="Hidden" id="38">
+   <BOUNDS type="Node" left="8280" top="720" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Receive String" slicecount="1" values="boundingCubeCenter">
+   </PIN>
+   <PIN pinname="Input Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="38" srcpinname="Input Value" dstnodeid="39" dstpinname="Translate XYZ">
+   </LINK>
+   <NODE systemname="R (Value)" nodename="R (Value)" componentmode="Hidden" id="41">
+   <BOUNDS type="Node" left="8730" top="6240" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="42" systemname="IOBox (Enumerations)">
+   <BOUNDS type="Box" left="8700" top="5535" width="1590" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="8700" top="5535" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Enum" slicecount="1" values="waistXYZ">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="42" srcpinname="Output Enum" dstnodeid="41" dstpinname="Receive String">
+   </LINK>
+   <NODE systemname="Translate (Transform Vector)" nodename="Translate (Transform Vector)" componentmode="Hidden" id="43">
+   <BOUNDS type="Node" left="6960" top="6045" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="XYZ" visible="1" slicecount="3" values="0,0,0">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
    </PIN>
    <PIN pinname="Transform In" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="14" srcpinname="Layer" dstnodeid="34" dstpinname="Input Value">
+   <LINK srcnodeid="41" srcpinname="Input Value" dstnodeid="43" dstpinname="XYZ">
    </LINK>
-   <LINK srcnodeid="19" srcpinname="Transform Out" dstnodeid="14" dstpinname="Transform In">
+   <LINK srcnodeid="39" srcpinname="Transform Out" dstnodeid="43" dstpinname="Transform In">
    </LINK>
-   <LINK srcnodeid="15" srcpinname="Render State" dstnodeid="14" dstpinname="Render State">
+   <NODE systemname="UniformScale (Transform)" nodename="UniformScale (Transform)" componentmode="Hidden" id="44">
+   <BOUNDS type="Node" left="5925" top="5025" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="XYZ" slicecount="1" values="0.55">
+   </PIN>
+   </NODE>
+   <NODE systemname="Multiply (3d Vector)" nodename="Multiply (3d Vector)" componentmode="Hidden" id="45">
+   <BOUNDS type="Node" left="5955" top="5790" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="XYZ UnTransformed" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   <PIN pinname="XYZ Transformed" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="13" srcpinname="XYZ" dstnodeid="45" dstpinname="XYZ UnTransformed">
    </LINK>
-   <LINK srcnodeid="8" srcpinname="Geometry Out" dstnodeid="14" dstpinname="Geometry">
+   <LINK srcnodeid="44" srcpinname="Transform Out" dstnodeid="45" dstpinname="Transform">
+   </LINK>
+   <NODE systemname="R (Value)" nodename="R (Value)" componentmode="Hidden" id="46">
+   <BOUNDS type="Node" left="1935" top="5490" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="47" systemname="IOBox (Enumerations)">
+   <BOUNDS type="Box" left="1755" top="5190" width="1065" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1755" top="5190" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Enum" slicecount="1" values="BBSkeleton">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="47" srcpinname="Output Enum" dstnodeid="46" dstpinname="Receive String">
+   </LINK>
+   <LINK srcnodeid="46" srcpinname="Input Value" dstnodeid="8" dstpinname="SizeXYZ">
+   </LINK>
+   <NODE systemname="GS_SuppressDiagonals (DX11.Effect)" filename="..\GSSuppressDiagonals\GS_SuppressDiagonals.fx" nodename="GS_SuppressDiagonals (DX11.Effect)" componentmode="Hidden" id="48">
+   <BOUNDS type="Node" left="3225" top="7035" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Geometry" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Technique" slicecount="1" values="RenderNoDiagonals">
+   </PIN>
+   <PIN pinname="Enabled" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Color" slicecount="1" values="|0.49212,0.49212,0.49212,1.00000|">
+   </PIN>
+   <PIN pinname="Render State" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="8" srcpinname="Geometry Out" dstnodeid="48" dstpinname="Geometry">
+   </LINK>
+   <LINK srcnodeid="43" srcpinname="Transform Out" dstnodeid="48" dstpinname="Transform In">
+   </LINK>
+   <LINK srcnodeid="48" srcpinname="Layer" dstnodeid="34" dstpinname="Input Value">
    </LINK>
    </PATCH>
