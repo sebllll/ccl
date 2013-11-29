@@ -183,7 +183,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="6420" top="7965" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Input String" slicecount="5" visible="1" values="SpaceIntensity,Speed,Smoothness,Reach,Energy">
+   <PIN pinname="Input String" slicecount="7" visible="1" values="SpaceIntensity,Speed,Smoothness,Reach,Energy,Density,TravelIntensity">
    </PIN>
    <PIN pinname="Default" slicecount="1" values="||">
    </PIN>
@@ -193,7 +193,7 @@
    </PIN>
    <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
    </PIN>
-   <PIN pinname="Rows" slicecount="1" values="5">
+   <PIN pinname="Rows" slicecount="1" values="7">
    </PIN>
    <PIN pinname="Show Grid" slicecount="1" values="1">
    </PIN>
@@ -379,7 +379,7 @@
    </PIN>
    <PIN pinname="Output String" visible="1">
    </PIN>
-   <BOUNDS type="Box" left="3045" top="4305" width="2085" height="2745">
+   <BOUNDS type="Box" left="3045" top="4305" width="2070" height="3135">
    </BOUNDS>
    <BOUNDS type="Node" left="3045" top="4305" width="0" height="0">
    </BOUNDS>
@@ -417,7 +417,7 @@
    <NODE id="30" nodename="IOBox (String)" componentmode="InABox" systemname="IOBox (String)">
    <PIN pinname="Output String" visible="1">
    </PIN>
-   <BOUNDS type="Box" left="5205" top="4305" width="2115" height="2745">
+   <BOUNDS type="Box" left="5205" top="4305" width="2220" height="3120">
    </BOUNDS>
    <BOUNDS type="Node" left="5205" top="4305" width="0" height="0">
    </BOUNDS>
@@ -467,11 +467,11 @@
    </PIN>
    <BOUNDS type="Node" left="3060" top="7770" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="3060" top="7770" width="885" height="1020">
+   <BOUNDS type="Box" left="3060" top="7770" width="930" height="1170">
    </BOUNDS>
-   <PIN pinname="Rows" slicecount="1" values="5">
+   <PIN pinname="Rows" slicecount="1" values="7">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="5" values="0,1,2,3,9">
+   <PIN pinname="Y Input Value" slicecount="7" values="0,1,2,3,9,4,6">
    </PIN>
    <PIN pinname="Vector Size" slicecount="1" values="3">
    </PIN>
